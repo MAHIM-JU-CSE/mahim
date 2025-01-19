@@ -1,0 +1,199 @@
+.outer {
+  background: #fff;
+  position: relative;
+  padding: 50px 0 110px 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 80%;
+  max-width: 1290px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftCol {
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.profile {
+  text-align: center;
+  padding: 30px 10px;
+  position: relative;
+}
+
+.image {
+  height: 65%;
+  width: 70%;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 1.75em;
+  font-weight: 300;
+  color: #000;
+  margin: 20px 0 10px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 0 10px;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #2e48a3;
+  margin: 0 0 10px;
+}
+
+.company:hover {
+  transition: color 0.6s ease;
+  color: #2962ff;
+
+}
+
+.rightCol {
+  flex: 0 0 66.66666667%;
+  max-width: 66.66666667%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.aboutText {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.p {
+  font-size: 17.5px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #212529;
+  text-align: left;
+}
+
+.degree1 {
+  color: #2e48a3;
+  transition: color 0.6s ease;
+}
+
+.degree1:hover {
+  color: #2962ff;
+}
+
+.degree2 {
+  color: #2e48a3;
+  transition: color 0.6s ease;
+}
+
+.degree2:hover {
+  color: #2962ff;
+}
+
+.degree3 {
+  color: #2e48a3;
+  transition: color 0.6s ease;
+}
+
+.degree3:hover {
+  color: #2962ff;
+}
+
+.degree4 {
+  color: #2e48a3;
+  transition: color 0.6s ease;
+}
+
+.degree4:hover {
+  color: #2962ff;
+}
+
+.bigIconGroup {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.bigIcon {
+  font-size: 2rem;
+  color: #2e48a3;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 8px;
+}
+
+.bigIcon:hover {
+  transform: scale(1.2);
+  color: #2962ff;
+}
+
+.interest {
+  flex: 0 0 41.66666667%;
+  max-width: 41.66666667%;
+}
+
+.aboutRow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.education {
+  flex: 0 0 58.33333333%;
+  max-width: 58.33333333%;
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.list {
+  padding-left: 40px;
+}
+
+.listItem {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #212529;
+  text-align: left;
+}
+
+.list2 {
+  padding-left: 40px;
+  list-style: none;
+}
+
+.edu {
+  padding-left: 8px;
+  font-size: 16px;
+}
+
+.des {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 32px;
+}
+
+.listItem2 {
+  margin-top: 5px;
+}
