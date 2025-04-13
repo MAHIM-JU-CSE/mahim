@@ -14,9 +14,6 @@ export default function Experience() {
                 marginLeft: 10,
                 fontWeight: 400,
                 color: "#313131",
-                wordWrap: "break-word",
-                wordBreak: "break-word",
-                paddingLeft: 20,
               }}
             >
               Competitive Programming
@@ -81,7 +78,7 @@ export default function Experience() {
                   judges. (StopStalk Profile).
                 </li>
                 <li className={styles.listItem}>
-                  Organizer, Problem Setter, and Judge for JU CSE 29’s Brain
+                  Organizer, Problem Setter, and Judge for JU CSE 29&apos;s Brain
                   Muscle Checking Contest 2022 and Binary Brains Battle December
                   2022.
                 </li>

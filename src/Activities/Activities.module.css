@@ -1,0 +1,247 @@
+.outer {
+  background: #fff;
+  position: relative;
+  padding: 110px 0 110px 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 80%;
+  max-width: 1290px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftCol {
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.rightCol {
+  flex: 0 0 66.66666667%;
+  max-width: 66.66666667%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.textContainer h2 {
+  margin-bottom: 0.5rem;
+}
+
+.textContainer p {
+  line-height: 1.6;
+}
+
+.textContainer .MuiTypography-subtitle1 {
+  /* Remove custom color */
+}
+
+.carouselContainer {
+  width: 100%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  will-change: transform;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carouselImage:hover {
+  transform: scale(1.05);
+}
+
+.textContainer {
+  padding: 2rem;
+  background: white;
+}
+
+.animateText {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.controlButton {
+  padding: 8px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.controlButton:hover {
+  transform: scale(1.1);
+}
+
+.indicators {
+  display: flex;
+  gap: 8px;
+  padding: 0 1rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  transform: scale(1.2);
+}
+
+.activeIndicator {
+  background-color: #1976d2;
+  transform: scale(1.2);
+}
+
+/* Slide animations */
+.slideleft {
+  animation: slideFromRight 0.3s ease-out;
+}
+
+.slideright {
+  animation: slideFromRight 0.3s ease-out reverse;
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .carouselContent {
+    flex-direction: row;
+  }
+  
+  .imageContainer {
+    width: 50%;
+    height: 400px;
+  }
+  
+  .textContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.imageControls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageContainer:hover .imageControls {
+  opacity: 1;
+}
+
+.imageControlButton {
+  color: white !important;
+  padding: 8px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(4px);
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.imageControlButton:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1);
+}
+
+.imageCounter {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+} 

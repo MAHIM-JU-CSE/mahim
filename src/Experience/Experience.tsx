@@ -28,19 +28,21 @@ export default function Experience() {
             <ul className={styles.list}>
               <ul>
                 <li className={styles.listItem}>
-                  Developing a Knowledge Graph build tool (Ontology Editor)
-                  using RDFox and a RAG (Retrieve and Generate) interface to
-                  enhance the management and relevance of private data.
-                  Collaborating with the Oxford Semantic Technology team, UK, on
-                  this project.
+                  Involved in a project of developing a Knowledge Graph build
+                  tool using RDFox engine. Later on, this will extend to
+                  fine-tuning LLMs using our KG build tool and RAG (Retrieve and
+                  Generate) interface to enhance the management and relevance of
+                  private data. In 2024, Samsung acquired Oxford Semantic
+                  Technology, UK and in this project, I am collaborating with the
+                  Oxford team.
                 </li>
                 <li className={styles.listItem}>
                   Contributing to patent development focused on advancements in
-                  camera photography and generative AI.
+                  camera photography and AI. 
                 </li>
                 <li className={styles.listItem}>
                   Analyzing feature requirements, designing and developing
-                  features, and fixing bugs.
+                  features in the project.
                 </li>
                 <li className={styles.listItem}>
                   Technical stack includes Next.js, TypeScript, React Query,

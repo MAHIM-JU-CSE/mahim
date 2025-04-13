@@ -1,37 +1,57 @@
 .appbar {
     background: white;
-    height:70px;
+    height: 70px;
     display: flex;
-    justify-content: space-between; /* Aligns contents to the right */
-    padding-right: 20px; /* Adds padding to the right edge */
+    justify-content: space-between;
+    padding-right: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.logo{
-    color:#2b2b2b;
+.logo {
+    color: #2b2b2b;
     padding-left: 300px;
     font-weight: 700 !important;
     text-decoration: none;
     transition: color .5s ease;
 }
 
-.logo:hover{
+.logo:hover {
     color: #2962ff;
 }
 
-.list{
+.list {
     padding-right: 290px;
+    display: flex;
+    align-items: center;
 }
 
-.listItem{
+.listItem {
     color: #34495e !important;
     opacity: 0.8;
     padding: 9px !important;
     font-size: 16px !important;
     font-weight: 700;
+    margin: 0 5px;
 }
 
-.listItem:hover{
+.listItem:hover {
     transition: color 0.3s ease;
     color: #2962ff !important;
+}
+
+@media (max-width: 600px) {
+    .appbar {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .logo {
+        padding-left: 0;
+        font-size: 1.2rem !important;
+    }
+
+    .list {
+        padding-right: 0;
+    }
 }
   

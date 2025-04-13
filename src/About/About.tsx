@@ -62,7 +62,8 @@ export default function About() {
                 >
                   Samsung R&D Institute Bangladesh
                 </a>
-                . I completed my MSc and BSc in Computer Science & Engineering at{" "}
+                . I completed my MSc and BSc in Computer Science & Engineering
+                at{" "}
                 <a
                   href="https://juniv.edu/"
                   target="_blank"
@@ -70,14 +71,15 @@ export default function About() {
                 >
                   Jahangirnagar University
                 </a>
-                . I was awarded four scholarships during the four years of my
-                BSc and one scholarship during my MSc for academic excellence by the University.
+                . My MSc thesis has been accepted for publication in the JUJECS
+                journal. I was awarded the University Academic Excellence Scholarship
+                four times during my BSc and once during my MSc in recognition
+                of academic excellence.
               </p>
               <br />
               <p className={styles.p}>
                 As a Software Engineer at Samsung Research, I am working on a
-                project involving a Knowledge Graph build tool (Ontology Editor)
-                using{" "}
+                project involving a Knowledge Graph build tool using{" "}
                 <a
                   href="https://docs.oxfordsemantic.tech/getting-started.html"
                   target="_blank"
@@ -85,9 +87,8 @@ export default function About() {
                 >
                   RDFox
                 </a>{" "}
-                engine and RAG interface to enhance the retrieval and generation
-                of information for private data. In this project I am working
-                with the{" "}
+                engine. Later I will work on fine-tuning LLM&apos;s using our KG
+                build tool. In this project I am collaborating with the{" "}
                 <a
                   href="https://www.oxfordsemantic.tech/"
                   target="_blank"
@@ -95,14 +96,16 @@ export default function About() {
                 >
                   Oxford Semantic Technology, UK
                 </a>{" "}
-                team. I have also contributed to <b>patent development</b> for
+                team. I have also contributed to the patent development for
                 Samsung, aligning business objectives with innovative solutions.
+                In February 2025, I have secured an <b>A1-grade patent</b>. The
+                patent is in the domain of AI and image processing.
               </p>
               <br />
               <p className={styles.p}>
-                I’m passionate about exploring advanced machine learning models,
-                like LLMs and deep neural networks, to tackle real-world
-                challenges in healthcare, education, and resource management. My
+                I’m passionate about exploring advanced machine learning
+                techniques, LLMs and deep neural networks, to tackle real-world
+                challenges in healthcare, education, resource management etc. My
                 goal is to create solutions that are not only impactful but also
                 efficient, making them accessible, scalable, and sustainable for
                 everyday use.
@@ -150,9 +153,7 @@ export default function About() {
               <div className={styles.interest}>
                 <div className={styles.heading}>Interests</div>
                 <ul className={styles.list}>
-                <li className={styles.listItem}>
-                    Advanced Machine Learning
-                  </li>
+                  <li className={styles.listItem}>Advanced Machine Learning</li>
                   <li className={styles.listItem}>Generative AI</li>
                   <li className={styles.listItem}>
                     Trustworthy and efficient AI
@@ -162,7 +163,6 @@ export default function About() {
                   </li>
 
                   <li className={styles.listItem}>Software Engineering</li>
-                
                 </ul>
               </div>
               <div className={styles.education}>

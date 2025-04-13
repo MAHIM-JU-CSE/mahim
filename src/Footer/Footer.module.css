@@ -1,0 +1,64 @@
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.iconLink {
+  color: #888;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.iconLink:hover {
+  color: #1976d2;  /* MUI's default primary blue color */
+  transform: translateY(-2px);
+}
+
+.copyright {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #64ffda;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .links {
+    justify-content: center;
+  }
+} 
