@@ -47,6 +47,7 @@
 
 .textContainer p {
   line-height: 1.6;
+  text-align: justify;
 }
 
 .textContainer .MuiTypography-subtitle1 {

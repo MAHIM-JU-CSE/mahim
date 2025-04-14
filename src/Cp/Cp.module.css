@@ -43,9 +43,9 @@
   .listItem {
     font-size: 16px;
     line-height: 1.7;
-    font-weight: 300;
-    color: #212529;
-    text-align: left;
+    font-weight: 400;
+    color: #000000;
+    text-align: justify;
   }
   
 @media (max-width: 768px) {

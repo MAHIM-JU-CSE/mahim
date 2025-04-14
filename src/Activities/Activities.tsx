@@ -6,8 +6,7 @@ import {
   CardMedia, 
   Typography, 
   IconButton,
-  Paper,
-  Fade
+  Paper
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -64,7 +63,6 @@ export default function Activities() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [slidePosition, setSlidePosition] = useState(0);
-  const [imageFadeIn, setImageFadeIn] = useState(true);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const minSwipeDistance = 50; // Minimum distance for a swipe to be registered
@@ -92,14 +90,9 @@ export default function Activities() {
     // Set up new timer for automatic rotation
     autoRotateTimer.current = setInterval(() => {
       const currentActivity = activities[currentIndex];
-      setImageFadeIn(false);
-      
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => 
-          prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
-        );
-        setImageFadeIn(true);
-      }, 300); // Half of the fade duration
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
+      );
     }, 5000); // 5 seconds interval
 
     // Clean up timer on unmount or when dependencies change
@@ -152,32 +145,18 @@ export default function Activities() {
       clearInterval(autoRotateTimer.current);
     }
     
-    // Trigger fade out animation
-    setImageFadeIn(false);
+    const currentActivity = activities[currentIndex];
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
+    );
     
-    // Wait for fade out to complete before changing image
-    setTimeout(() => {
+    // Restart the auto-rotation timer
+    autoRotateTimer.current = setInterval(() => {
       const currentActivity = activities[currentIndex];
       setCurrentImageIndex((prevIndex) => 
         prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
       );
-      
-      // Trigger fade in animation
-      setImageFadeIn(true);
-      
-      // Restart the auto-rotation timer
-      autoRotateTimer.current = setInterval(() => {
-        const currentActivity = activities[currentIndex];
-        setImageFadeIn(false);
-        
-        setTimeout(() => {
-          setCurrentImageIndex((prevIndex) => 
-            prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
-          );
-          setImageFadeIn(true);
-        }, 300); // Half of the fade duration
-      }, 5000);
-    }, 300); // Half of the fade duration
+    }, 5000);
   };
 
   const handleImagePrevious = () => {
@@ -186,32 +165,18 @@ export default function Activities() {
       clearInterval(autoRotateTimer.current);
     }
     
-    // Trigger fade out animation
-    setImageFadeIn(false);
+    const currentActivity = activities[currentIndex];
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? currentActivity.images.length - 1 : prevIndex - 1
+    );
     
-    // Wait for fade out to complete before changing image
-    setTimeout(() => {
+    // Restart the auto-rotation timer
+    autoRotateTimer.current = setInterval(() => {
       const currentActivity = activities[currentIndex];
       setCurrentImageIndex((prevIndex) => 
-        prevIndex === 0 ? currentActivity.images.length - 1 : prevIndex - 1
+        prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
       );
-      
-      // Trigger fade in animation
-      setImageFadeIn(true);
-      
-      // Restart the auto-rotation timer
-      autoRotateTimer.current = setInterval(() => {
-        const currentActivity = activities[currentIndex];
-        setImageFadeIn(false);
-        
-        setTimeout(() => {
-          setCurrentImageIndex((prevIndex) => 
-            prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
-          );
-          setImageFadeIn(true);
-        }, 300); // Half of the fade duration
-      }, 5000);
-    }, 300); // Half of the fade duration
+    }, 5000);
   };
 
   const handleIndicatorClick = (index: number) => {
@@ -326,14 +291,12 @@ export default function Activities() {
                       onTouchMove={handleImageTouchMove}
                       onTouchEnd={handleImageTouchEnd}
                     >
-                      <Fade in={imageFadeIn} timeout={600}>
-                        <CardMedia
-                          component="img"
-                          image={currentImage}
-                          alt={currentActivity.title}
-                          className={styles.carouselImage}
-                        />
-                      </Fade>
+                      <CardMedia
+                        component="img"
+                        image={currentImage}
+                        alt={currentActivity.title}
+                        className={styles.carouselImage}
+                      />
                       {currentActivity.images.length > 1 && (
                         <div className={styles.imageControls}>
                           <IconButton 
