@@ -197,3 +197,112 @@
 .listItem2 {
   margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+  .outer {
+    padding: 30px 0 60px 0;
+  }
+
+  .inner {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .leftCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .rightCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .image {
+    height: 50%;
+    width: 50%;
+  }
+
+  .name {
+    font-size: 1.5em;
+  }
+
+  .p {
+    font-size: 16px;
+  }
+
+  .aboutRow {
+    flex-direction: column;
+  }
+
+  .interest {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .education {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .list, .list2 {
+    padding-left: 20px;
+  }
+
+  .des {
+    padding-left: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer {
+    padding: 20px 0 40px 0;
+  }
+
+  .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .image {
+    height: 60%;
+    width: 60%;
+  }
+
+  .name {
+    font-size: 1.3em;
+  }
+
+  .title, .company {
+    font-size: 0.9rem;
+  }
+
+  .p {
+    font-size: 15px;
+  }
+
+  .heading {
+    font-size: 1.1rem;
+  }
+
+  .listItem, .edu {
+    font-size: 14px;
+  }
+
+  .des {
+    font-size: 13px;
+  }
+
+  .bigIcon {
+    font-size: 1.5rem;
+    margin: 0 6px;
+  }
+}

@@ -57,7 +57,28 @@ export default function Appbar() {
 
   const drawerContent = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2, cursor: "pointer", color: "#2b2b2b" }} onClick={() => scrollToSection("about")}>
+      <Typography 
+        variant="h6" 
+        sx={{ 
+          my: 2, 
+          cursor: "pointer", 
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: 700,
+          letterSpacing: "0.5px",
+          fontSize: "1.4rem"
+        }} 
+        onClick={() => scrollToSection("about")}
+      >
+        <img 
+          src="/logo.svg" 
+          alt="Mahim Logo" 
+          style={{ 
+            height: "24px", 
+            marginRight: "10px"
+          }} 
+        />
         Mahim
       </Typography>
       <Divider />
@@ -65,7 +86,12 @@ export default function Appbar() {
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
             <ListItemButton 
-              sx={{ textAlign: "center" }}
+              sx={{ 
+                textAlign: "center",
+                fontWeight: 600,
+                letterSpacing: "0.3px",
+                fontSize: "1rem"
+              }}
               onClick={() => scrollToSection(item.id)}
             >
               <ListItemText primary={item.name} />
@@ -80,50 +106,67 @@ export default function Appbar() {
     <>
       <AppBar component="nav" position="fixed">
         <Toolbar className={styles.appbar}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" }, color: "#2b2b2b" }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box>
-            <Typography
-              variant="h5"
-              component="div"
-              className={styles.logo}
-              sx={{ 
-                flexGrow: 1, 
-                display: { xs: "none", sm: "block" }, 
-                cursor: "pointer",
-                fontSize: { xs: "1.2rem", sm: "1.5rem" }
-              }}
-              onClick={() => scrollToSection("about")}
+          <div className={styles.appbarContent}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" }, color: "#2b2b2b" }}
             >
-              Mahim
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{ 
-              display: { xs: "none", sm: "block" },
-              marginLeft: "auto"
-            }}
-            className={styles.list}
-          >
-            {navItems.map((item) => (
-              <ButtonBase 
-                key={item.name} 
-                className={styles.listItem} 
-                disableRipple
-                onClick={() => scrollToSection(item.id)}
+              <MenuIcon />
+            </IconButton>
+            <Box>
+              <Typography
+                variant="h5"
+                component="div"
+                className={styles.logo}
+                sx={{ 
+                  flexGrow: 1, 
+                  display: { xs: "none", sm: "flex" }, 
+                  alignItems: "center",
+                  cursor: "pointer",
+                  fontSize: { xs: "1.4rem", sm: "1.6rem" },
+                  fontWeight: 700,
+                  letterSpacing: "0.5px"
+                }}
+                onClick={() => scrollToSection("about")}
               >
-                {item.name}
-              </ButtonBase>
-            ))}
-          </Box>
+                <img 
+                  src="/logo.svg" 
+                  alt="Mahim Logo" 
+                  style={{ 
+                    height: "28px", 
+                    marginRight: "10px"
+                  }} 
+                />
+                Mahim
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{ 
+                display: { xs: "none", sm: "block" },
+                marginLeft: "auto"
+              }}
+              className={styles.list}
+            >
+              {navItems.map((item) => (
+                <ButtonBase 
+                  key={item.name} 
+                  className={styles.listItem} 
+                  disableRipple
+                  onClick={() => scrollToSection(item.id)}
+                  sx={{
+                    fontSize: "1rem",
+                    fontWeight: 600
+                  }}
+                >
+                  {item.name}
+                </ButtonBase>
+              ))}
+            </Box>
+          </div>
         </Toolbar>
       </AppBar>
 

@@ -244,4 +244,119 @@
   padding: 4px 12px;
   border-radius: 12px;
   backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .outer {
+    padding: 60px 0 60px 0;
+  }
+
+  .inner {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .leftCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .rightCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .imageContainer {
+    height: 250px;
+  }
+
+  .textContainer {
+    padding: 1.5rem;
+  }
+
+  .textContainer h2 {
+    font-size: 1.3rem;
+  }
+
+  .textContainer p {
+    font-size: 0.9rem;
+  }
+
+  .carouselControls {
+    padding: 0.8rem;
+  }
+
+  .controlButton {
+    padding: 6px !important;
+  }
+
+  .indicators {
+    gap: 6px;
+  }
+
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer {
+    padding: 40px 0 40px 0;
+  }
+
+  .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .imageContainer {
+    height: 200px;
+  }
+
+  .textContainer {
+    padding: 1rem;
+  }
+
+  .textContainer h2 {
+    font-size: 1.1rem;
+  }
+
+  .textContainer p {
+    font-size: 0.85rem;
+  }
+
+  .carouselControls {
+    padding: 0.6rem;
+  }
+
+  .controlButton {
+    padding: 4px !important;
+  }
+
+  .imageControls {
+    padding: 8px 12px;
+  }
+
+  .imageCounter {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
 } 

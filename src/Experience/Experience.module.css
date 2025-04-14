@@ -72,3 +72,70 @@
   margin-bottom: 0.4rem;
   margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+  .outer {
+    padding: 60px 0 60px 0;
+  }
+
+  .inner {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .leftCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .rightCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .designation, .designation2 {
+    font-size: 1.1rem;
+  }
+
+  .list {
+    padding-left: 20px;
+  }
+
+  .listItem {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outer {
+    padding: 40px 0 40px 0;
+  }
+
+  .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .designation, .designation2 {
+    font-size: 1rem;
+  }
+
+  .company {
+    font-size: 0.9rem;
+  }
+
+  .duration {
+    font-size: 0.9rem;
+  }
+
+  .listItem {
+    font-size: 14px;
+  }
+}
