@@ -79,6 +79,7 @@
   position: relative;
   width: 100%;
   will-change: transform;
+  touch-action: pan-y pinch-zoom;
 }
 
 .imageContainer {
@@ -87,6 +88,8 @@
   overflow: hidden;
   position: relative;
   border-radius: 8px 8px 0 0;
+  touch-action: pan-y pinch-zoom;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .carouselImage {

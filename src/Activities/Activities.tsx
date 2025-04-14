@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, TouchEvent } from 'react';
 import styles from './Activities.module.css';
 import { 
   CardMedia, 
@@ -24,24 +24,25 @@ interface Activity {
 const activities: Activity[] = [
   {
     id: 1,
-    title: "Knowledge Graph Session at SRBD",
-    date: "April 16, 2024",
-    description: "Conducted a session on Knowledge Graph build tool for SRBD engineers, demonstrating the integration with RDFox engine and its applications in AI.",
+    title: "Patent Experience Sharing Session at SRBD",
+    date: "April 15, 2025",
+    description: "Conducted a session on patent experience sharing in front of all engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
     images: ["/pro.jpg", "/pro2.jpg"], // Multiple images for the activity
-  },
-  {
-    id: 2,
-    title: "Collaboration with Oxford Semantic Technology",
-    date: "March 2024",
-    description: "Collaborated with Oxford engineers on fine-tuning LLMs using our Knowledge Graph build tool. Worked on improving semantic reasoning capabilities.",
-    images: ["/pro2.jpg", "/profile.png"], // Multiple images for the activity
   },
   {
     id: 3,
     title: "Business Trip to Oxford, UK",
-    date: "February 2024",
-    description: "Visited Oxford Semantic Technology headquarters for project planning and technical discussions. Met with the team to align on project goals and timelines.",
-    images: ["/profile.png", "/pro.jpg"], // Multiple images for the activity
+    date: "March 2025",
+    description: "Visited Oxford Semantic Technologies, UK for project planning and technical discussions. Met with the team to align on project goals and timelines.",
+    images: [
+      "/20A92FD5-7473-4FD2-A8CE-004FE067586C_1_105_c.jpeg",
+      "/1A6CE931-16B7-41D3-A3C1-AFADEDF8AFB2_1_105_c.jpeg",
+      "/B4D924D6-EEB0-45F6-AF6B-19A734447A16_1_105_c.jpeg",
+      "/EFC7FFC2-070E-4216-A20F-2B06964BD2CB_1_105_c.jpeg",
+      "/504BCFC9-DD02-4356-91F3-EF559681764F_1_105_c.jpeg",
+      "/9EB286FC-0E0A-40A3-8B00-F81F8796ABED_1_105_c.jpeg",
+      "/7ACE9258-40E5-4028-98B1-1BC26B249DC5_1_105_c.jpeg"
+    ],
   },
   // Add more activities as needed
 ];
@@ -51,6 +52,11 @@ export default function Activities() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [slidePosition, setSlidePosition] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50; // Minimum distance for a swipe to be registered
+  const imageTouchStartX = useRef<number | null>(null);
+  const imageTouchEndX = useRef<number | null>(null);
 
   const handlePrevious = () => {
     if (isAnimating) return;
@@ -118,6 +124,60 @@ export default function Activities() {
     }, 600);
   };
 
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrevious();
+    }
+    
+    // Reset touch values
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const handleImageTouchStart = (e: TouchEvent) => {
+    imageTouchStartX.current = e.touches[0].clientX;
+    imageTouchEndX.current = null;
+  };
+
+  const handleImageTouchMove = (e: TouchEvent) => {
+    imageTouchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleImageTouchEnd = () => {
+    if (!imageTouchStartX.current || !imageTouchEndX.current) return;
+    
+    const distance = imageTouchStartX.current - imageTouchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleImageNext();
+    } else if (isRightSwipe) {
+      handleImagePrevious();
+    }
+    
+    // Reset touch values
+    imageTouchStartX.current = null;
+    imageTouchEndX.current = null;
+  };
+
   const currentActivity = activities[currentIndex];
   const currentImage = currentActivity.images[currentImageIndex];
 
@@ -151,8 +211,15 @@ export default function Activities() {
                       transform: `translateX(${slidePosition}%)`,
                       transition: isAnimating ? 'transform 0.6s ease-out' : 'none'
                     }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                   >
-                    <div className={styles.imageContainer}>
+                    <div className={styles.imageContainer}
+                      onTouchStart={handleImageTouchStart}
+                      onTouchMove={handleImageTouchMove}
+                      onTouchEnd={handleImageTouchEnd}
+                    >
                       <CardMedia
                         component="img"
                         image={currentImage}
