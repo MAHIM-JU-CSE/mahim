@@ -1,7 +1,7 @@
-import { Handler } from '@netlify/functions';
+import { Handler, HandlerResponse } from '@netlify/functions';
 import nodemailer from 'nodemailer';
 
-const handler: Handler = async (event) => {
+const handler: Handler = async (event): Promise<HandlerResponse> => {
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -11,6 +11,7 @@ const handler: Handler = async (event) => {
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
       },
+      body: '',
     };
   }
 
@@ -21,6 +22,8 @@ const handler: Handler = async (event) => {
       body: JSON.stringify({ error: 'Method not allowed' }),
       headers: {
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     };
   }
@@ -35,6 +38,8 @@ const handler: Handler = async (event) => {
         body: JSON.stringify({ error: 'Missing required fields' }),
         headers: {
           'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       };
     }
@@ -46,6 +51,8 @@ const handler: Handler = async (event) => {
         body: JSON.stringify({ error: 'Email service is not configured properly' }),
         headers: {
           'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       };
     }
@@ -85,6 +92,8 @@ const handler: Handler = async (event) => {
       body: JSON.stringify({ message: 'Email sent successfully' }),
       headers: {
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     };
   } catch (error) {
@@ -94,6 +103,8 @@ const handler: Handler = async (event) => {
       body: JSON.stringify({ error: 'Failed to send email' }),
       headers: {
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     };
   }
