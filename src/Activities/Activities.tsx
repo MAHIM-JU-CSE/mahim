@@ -30,7 +30,7 @@ const activities: Activity[] = [
     images: ["/pro.jpg", "/pro2.jpg"], // Multiple images for the activity
   },
   {
-    id: 3,
+    id: 2,
     title: "Business Trip to Oxford, UK",
     date: "March 2025",
     description: "Visited Oxford Semantic Technologies, UK for project planning and technical discussions. Met with the team to align on project goals and timelines.",
@@ -42,6 +42,17 @@ const activities: Activity[] = [
       "/504BCFC9-DD02-4356-91F3-EF559681764F_1_105_c.jpeg",
       "/9EB286FC-0E0A-40A3-8B00-F81F8796ABED_1_105_c.jpeg",
       "/7ACE9258-40E5-4028-98B1-1BC26B249DC5_1_105_c.jpeg"
+    ],
+  },
+  {
+    id: 3,
+    title: "Exploring London: A Glimpse of the City",
+    date: "March 2025",
+    description: "Took some time to explore the vibrant city of London during my UK visit. Experienced the rich history, iconic landmarks, and diverse culture of one of the world's most dynamic cities.",
+    images: [
+      "/ABD7AB55-E7C5-4D06-B121-2537BF0D4257_1_105_c.jpeg",
+      "/FC5FCC41-9A9C-4DF6-A988-36346F34A385_1_105_c.jpeg",
+      "/55ADC44D-7C2D-41B6-8D13-D20DDBF79AE4_1_102_o.jpeg"
     ],
   },
   // Add more activities as needed
