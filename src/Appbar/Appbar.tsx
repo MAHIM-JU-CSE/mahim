@@ -71,14 +71,6 @@ export default function Appbar() {
         }} 
         onClick={() => scrollToSection("about")}
       >
-        <img 
-          src="/logo.svg" 
-          alt="Mahim Logo" 
-          style={{ 
-            height: "24px", 
-            marginRight: "10px"
-          }} 
-        />
         Mahim
       </Typography>
       <Divider />
@@ -132,14 +124,6 @@ export default function Appbar() {
                 }}
                 onClick={() => scrollToSection("about")}
               >
-                <img 
-                  src="/logo.svg" 
-                  alt="Mahim Logo" 
-                  style={{ 
-                    height: "28px", 
-                    marginRight: "10px"
-                  }} 
-                />
                 Mahim
               </Typography>
             </Box>

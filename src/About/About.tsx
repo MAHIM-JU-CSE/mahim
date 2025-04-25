@@ -63,7 +63,7 @@ export default function About() {
                   Samsung R&D Institute Bangladesh
                 </a>
                 . I completed my MSc and BSc in Computer Science & Engineering
-                at{" "}
+                from{" "}
                 <a
                   href="https://juniv.edu/"
                   target="_blank"
@@ -72,23 +72,28 @@ export default function About() {
                   Jahangirnagar University
                 </a>
                 . My MSc thesis has been accepted for publication in the JUJECS
-                journal. I was awarded the University Academic Excellence Scholarship
-                four times during my BSc and once during my MSc in recognition
-                of academic excellence.
-              </p>
-              <br />
-              <p className={styles.p}>
-                As a Software Engineer at Samsung Research, I am working on a
-                project involving a Knowledge Graph build tool using{" "}
+                journal and on this thesis I've received the{" "}
                 <a
-                  href="https://docs.oxfordsemantic.tech/getting-started.html"
+                  href="https://grant.most.gov.bd/en/services/most/nst-fellowship"
                   target="_blank"
                   style={{ color: "#2e48a3" }}
                 >
-                  RDFox
+                  National Science and Technology fellowship award
                 </a>{" "}
-                engine. Later I will work on fine-tuning LLM&apos;s using our KG
-                build tool. In this project I am collaborating with the{" "}
+                from the Ministry of Science and Technology, Bangladesh.
+                During my academic journey, I have received the University dean's scholarship five times - four times during my BSc and once during my MSc - for academic excellence.
+              </p>
+              <br />
+              <p className={styles.p}>
+                Currently, as a Software Engineer at Samsung Research, I lead the development of a project on Knowledge Graph build tool using{" "}
+                <a
+                  href="https://www.oxfordsemantic.tech/rdfox"
+                  target="_blank"
+                  style={{ color: "#2e48a3" }}
+                >
+                  RDFox engine
+                </a>{" "}
+                . In this role, I'm collaborating with the{" "}
                 <a
                   href="https://www.oxfordsemantic.tech/"
                   target="_blank"
@@ -96,19 +101,11 @@ export default function About() {
                 >
                   Oxford Semantic Technology, UK
                 </a>{" "}
-                team. I have also contributed to the patent development for
-                Samsung, aligning business objectives with innovative solutions.
-                In February 2025, I have secured an <b>A1-grade patent</b>. The
-                patent is in the domain of AI and image processing.
+                team. My upcoming work will focus on fine-tuning LLMs using our KG build tool. I have also contributed to Samsung's patent development, securing an <b>A1-grade patent</b> in February 2025 in the domain of Generative AI and Image Processing.
               </p>
               <br />
               <p className={styles.p}>
-                I’m passionate about exploring advanced machine learning
-                techniques, LLMs and deep neural networks, to tackle real-world
-                challenges in healthcare, education, resource management etc. My
-                goal is to create solutions that are not only impactful but also
-                efficient, making them accessible, scalable, and sustainable for
-                everyday use.
+                I am passionate about exploring advanced machine learning techniques, LLMs, and deep neural networks to tackle real-world challenges in healthcare, education, and resource management. My goal is to create solutions that are both impactful and efficient.
               </p>
               <br />
               <p className={styles.p}>

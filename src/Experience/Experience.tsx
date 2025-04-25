@@ -28,26 +28,43 @@ export default function Experience() {
             <ul className={styles.list}>
               <ul>
                 <li className={styles.listItem}>
-                  Involved in a project of developing a Knowledge Graph build
-                  tool using RDFox engine. Later on, this will extend to
-                  fine-tuning LLMs using our KG build tool and RAG (Retrieve and
-                  Generate) interface to enhance the management and relevance of
-                  private data. In 2024, Samsung acquired Oxford Semantic
-                  Technology, UK and in this project, I am collaborating with the
-                  Oxford team.
+                  Currently working on a project to build a{" "}
+                  <b>Knowledge Graph editing tool</b> using the RDFox engine.
+                  Collaborating with the Oxford Semantic Technologies team , UK
+                  (acquired by Samsung in 2024).
                 </li>
                 <li className={styles.listItem}>
-                  Contributing to patent development focused on advancements in
-                  camera photography and AI. 
+                  Responsible for analyzing requirements, designing features,
+                  and developing full-stack solutions using Next.js, TypeScript,
+                  React Flow, React Query, Playwright, Storybook, Jest,
+                  Material-UI (MUI), and Java .
                 </li>
                 <li className={styles.listItem}>
-                  Analyzing feature requirements, designing and developing
-                  features in the project.
+                  Contributing to patent development in the area of AI-powered
+                  camera technology. Secured <b>1 A1-grade patent</b> in
+                  February 2025.
                 </li>
                 <li className={styles.listItem}>
-                  Technical stack includes Next.js, TypeScript, React Query,
-                  Playwright, Storybook, Jest, Material-UI (MUI), React Flow,
-                  Java, Spring Boot, Python etc.
+                  Proposed and developed <b>2 AI-driven ideas</b> for Samsung’s
+                  internal AI contest, both selected for Proof-of-Concept (PoC)
+                  incubation.
+                </li>
+                <li className={styles.listItem}>
+                  Proposed and developed <b>3 project feature ideas</b> to
+                  enhance product functionality and user experience.
+                </li>
+                <li className={styles.listItem}>
+                  Completed a <b>6-month Generative AI training program</b>{" "}
+                  conducted by{" "}
+                  <a
+                    href="https://www.buet.ac.bd/web/#/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#2e48a3" }}
+                  >
+                    BUET
+                  </a>{" "}
+                  and Samsung, focusing on practical LLM applications.
                 </li>
               </ul>
             </ul>
