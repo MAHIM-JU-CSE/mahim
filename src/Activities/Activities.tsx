@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState, useRef, TouchEvent, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './Activities.module.css';
 import { 
   CardMedia, 
   Typography, 
   IconButton,
-  Paper
+  Paper,
+  Box,
+  Stack
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -26,8 +28,8 @@ const activities: Activity[] = [
     id: 1,
     title: "Patent Experience Sharing Session at SRBD",
     date: "April 15, 2025",
-    description: "Conducted a session on patent experience sharing in front of all engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
-    images: ["/pro.jpg", "/pro2.jpg"], // Multiple images for the activity
+    description: "Conducted a session on patent strategy in front of all engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
+    images: ["/IMG_1493.jpg"], // Multiple images for the activity
   },
   {
     id: 2,
@@ -51,8 +53,8 @@ const activities: Activity[] = [
     description: "Took some time to explore the vibrant city of London during my UK visit. Experienced the rich history, iconic landmarks, and diverse culture of one of the world's most dynamic cities.",
     images: [
       "/ABD7AB55-E7C5-4D06-B121-2537BF0D4257_1_105_c.jpeg",
-      "/FC5FCC41-9A9C-4DF6-A988-36346F34A385_1_105_c.jpeg",
-      "/55ADC44D-7C2D-41B6-8D13-D20DDBF79AE4_1_102_o.jpeg"
+      "/A91AC935-5E8B-452B-A026-B6457B0A5434_1_105_c.jpeg",
+      
     ],
   },
   // Add more activities as needed
@@ -61,192 +63,65 @@ const activities: Activity[] = [
 export default function Activities() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [slidePosition, setSlidePosition] = useState(0);
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-  const minSwipeDistance = 50; // Minimum distance for a swipe to be registered
-  const imageTouchStartX = useRef<number | null>(null);
-  const imageTouchEndX = useRef<number | null>(null);
   const autoRotateTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Add useEffect for automatic image rotation
+  // Auto-rotate images
   useEffect(() => {
-    // Clear any existing timer when component unmounts or dependencies change
-    return () => {
-      if (autoRotateTimer.current) {
-        clearInterval(autoRotateTimer.current);
-      }
-    };
-  }, []);
-
-  // Add useEffect to handle automatic image rotation
-  useEffect(() => {
-    // Clear any existing timer
     if (autoRotateTimer.current) {
       clearInterval(autoRotateTimer.current);
     }
 
-    // Set up new timer for automatic rotation
     autoRotateTimer.current = setInterval(() => {
       const currentActivity = activities[currentIndex];
       setCurrentImageIndex((prevIndex) => 
         prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // 5 seconds interval
+    }, 5000);
 
-    // Clean up timer on unmount or when dependencies change
     return () => {
       if (autoRotateTimer.current) {
         clearInterval(autoRotateTimer.current);
       }
     };
-  }, [currentIndex]); // Re-run when currentIndex changes
+  }, [currentIndex]);
 
   const handlePrevious = () => {
-    if (isAnimating) return;
-    
-    setIsAnimating(true);
-    
-    // Animate the slide
-    setSlidePosition(100);
-    
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === 0 ? activities.length - 1 : prevIndex - 1
-      );
-      setCurrentImageIndex(0); // Reset image index when changing activity
-      setSlidePosition(0);
-      setIsAnimating(false);
-    }, 600);
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? activities.length - 1 : prevIndex - 1
+    );
+    setCurrentImageIndex(0);
   };
 
   const handleNext = () => {
-    if (isAnimating) return;
-    
-    setIsAnimating(true);
-    
-    // Animate the slide
-    setSlidePosition(-100);
-    
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === activities.length - 1 ? 0 : prevIndex + 1
-      );
-      setCurrentImageIndex(0); // Reset image index when changing activity
-      setSlidePosition(0);
-      setIsAnimating(false);
-    }, 600);
+    setCurrentIndex((prevIndex) => 
+      prevIndex === activities.length - 1 ? 0 : prevIndex + 1
+    );
+    setCurrentImageIndex(0);
   };
 
   const handleImageNext = () => {
-    // Reset the auto-rotation timer when manually changing images
     if (autoRotateTimer.current) {
       clearInterval(autoRotateTimer.current);
     }
-    
     const currentActivity = activities[currentIndex];
     setCurrentImageIndex((prevIndex) => 
       prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
     );
-    
-    // Restart the auto-rotation timer
-    autoRotateTimer.current = setInterval(() => {
-      const currentActivity = activities[currentIndex];
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
   };
 
   const handleImagePrevious = () => {
-    // Reset the auto-rotation timer when manually changing images
     if (autoRotateTimer.current) {
       clearInterval(autoRotateTimer.current);
     }
-    
     const currentActivity = activities[currentIndex];
     setCurrentImageIndex((prevIndex) => 
       prevIndex === 0 ? currentActivity.images.length - 1 : prevIndex - 1
     );
-    
-    // Restart the auto-rotation timer
-    autoRotateTimer.current = setInterval(() => {
-      const currentActivity = activities[currentIndex];
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === currentActivity.images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
   };
 
   const handleIndicatorClick = (index: number) => {
-    if (isAnimating || index === currentIndex) return;
-    
-    setIsAnimating(true);
-    
-    // Animate the slide
-    setSlidePosition(index > currentIndex ? -100 : 100);
-    
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setCurrentImageIndex(0); // Reset image index when changing activity
-      setSlidePosition(0);
-      setIsAnimating(false);
-    }, 600);
-  };
-
-  const handleTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchEndX.current = null;
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    
-    const distance = touchStartX.current - touchEndX.current;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-    
-    if (isLeftSwipe) {
-      handleNext();
-    } else if (isRightSwipe) {
-      handlePrevious();
-    }
-    
-    // Reset touch values
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  const handleImageTouchStart = (e: TouchEvent) => {
-    imageTouchStartX.current = e.touches[0].clientX;
-    imageTouchEndX.current = null;
-  };
-
-  const handleImageTouchMove = (e: TouchEvent) => {
-    imageTouchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleImageTouchEnd = () => {
-    if (!imageTouchStartX.current || !imageTouchEndX.current) return;
-    
-    const distance = imageTouchStartX.current - imageTouchEndX.current;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-    
-    if (isLeftSwipe) {
-      handleImageNext();
-    } else if (isRightSwipe) {
-      handleImagePrevious();
-    }
-    
-    // Reset touch values
-    imageTouchStartX.current = null;
-    imageTouchEndX.current = null;
+    setCurrentIndex(index);
+    setCurrentImageIndex(0);
   };
 
   const currentActivity = activities[currentIndex];
@@ -270,97 +145,224 @@ export default function Activities() {
           </div>
           <div className={styles.rightCol}>
             <p className={styles.subtitle}>
-            My Ongoing Journey Through Work, Life, Learning, and the Experiences That Shape Who I Am!
+              My Ongoing Journey Through Work, Life, Learning, and the Experiences That Shape Who I Am!
             </p>
 
-            <div className={styles.carouselContainer}>
-              <Paper elevation={3} className={styles.carousel}>
-                <div className={styles.carouselWrapper}>
-                  <div 
-                    className={styles.carouselContent}
-                    style={{ 
-                      transform: `translateX(${slidePosition}%)`,
-                      transition: isAnimating ? 'transform 0.6s ease-out' : 'none'
+            <Paper 
+              elevation={2} 
+              sx={{ 
+                width: '100%',
+                overflow: 'hidden',
+                borderRadius: '12px',
+                position: 'relative',
+                backgroundColor: 'transparent',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+              }}
+            >
+              <Box sx={{ 
+                position: 'relative', 
+                width: '100%',
+                paddingTop: '56.25%', // 16:9 aspect ratio
+                borderRadius: '12px 12px 0 0',
+                overflow: 'hidden'
+              }}>
+                <Box sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <CardMedia
+                    component="img"
+                    image={currentImage}
+                    alt={currentActivity.title}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.3s ease-in-out',
+                      '&:hover': {
+                        transform: 'scale(1.02)'
+                      }
                     }}
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
+                  />
+                </Box>
+                {currentActivity.images.length > 1 && (
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 12,
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                      padding: '4px 12px',
+                      borderRadius: '20px',
+                      backdropFilter: 'blur(4px)',
+                    }}
                   >
-                    <div className={styles.imageContainer}
-                      onTouchStart={handleImageTouchStart}
-                      onTouchMove={handleImageTouchMove}
-                      onTouchEnd={handleImageTouchEnd}
+                    <IconButton 
+                      onClick={handleImagePrevious}
+                      sx={{ 
+                        color: 'white',
+                        padding: '4px',
+                        '&:hover': {
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                        }
+                      }}
+                      aria-label="previous image"
                     >
-                      <CardMedia
-                        component="img"
-                        image={currentImage}
-                        alt={currentActivity.title}
-                        className={styles.carouselImage}
-                      />
-                      {currentActivity.images.length > 1 && (
-                        <div className={styles.imageControls}>
-                          <IconButton 
-                            onClick={handleImagePrevious}
-                            className={styles.imageControlButton}
-                            aria-label="previous image"
-                          >
-                            <ArrowBackIosNewIcon />
-                          </IconButton>
-                          <span className={styles.imageCounter}>
-                            {currentImageIndex + 1} / {currentActivity.images.length}
-                          </span>
-                          <IconButton 
-                            onClick={handleImageNext}
-                            className={styles.imageControlButton}
-                            aria-label="next image"
-                          >
-                            <ArrowForwardIosIcon />
-                          </IconButton>
-                        </div>
-                      )}
-                    </div>
-                    <div className={styles.textContainer}>
-                      <Typography variant="h5" component="h2" gutterBottom className={styles.animateText}>
-                        {currentActivity.title}
-                      </Typography>
-                      <Typography variant="subtitle1" color="text.secondary" gutterBottom className={styles.animateText}>
-                        {currentActivity.date}
-                      </Typography>
-                      <Typography variant="body1" paragraph className={styles.animateText}>
-                        {currentActivity.description}
-                      </Typography>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.carouselControls}>
-                  <IconButton 
-                    onClick={handlePrevious} 
-                    className={styles.controlButton}
-                    aria-label="previous activity"
-                    disabled={isAnimating}
-                  >
-                    <ArrowBackIosNewIcon />
-                  </IconButton>
-                  <div className={styles.indicators}>
-                    {activities.map((_, index) => (
-                      <span 
-                        key={index} 
-                        className={`${styles.indicator} ${index === currentIndex ? styles.activeIndicator : ''}`}
-                        onClick={() => handleIndicatorClick(index)}
-                      />
-                    ))}
-                  </div>
-                  <IconButton 
-                    onClick={handleNext} 
-                    className={styles.controlButton}
-                    aria-label="next activity"
-                    disabled={isAnimating}
-                  >
-                    <ArrowForwardIosIcon />
-                  </IconButton>
-                </div>
-              </Paper>
-            </div>
+                      <ArrowBackIosNewIcon fontSize="small" />
+                    </IconButton>
+                    <Typography 
+                      variant="body2" 
+                      sx={{ 
+                        color: 'white',
+                        fontSize: '0.8rem',
+                        fontWeight: 500
+                      }}
+                    >
+                      {currentImageIndex + 1} / {currentActivity.images.length}
+                    </Typography>
+                    <IconButton 
+                      onClick={handleImageNext}
+                      sx={{ 
+                        color: 'white',
+                        padding: '4px',
+                        '&:hover': {
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                        }
+                      }}
+                      aria-label="next image"
+                    >
+                      <ArrowForwardIosIcon fontSize="small" />
+                    </IconButton>
+                  </Box>
+                )}
+              </Box>
+
+              <Box sx={{ 
+                p: 2.5,
+                backgroundColor: 'white',
+                borderRadius: '0 0 12px 12px',
+                height: '180px', // Fixed height for description section
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    fontWeight: 600,
+                    mb: 0.5,
+                    color: '#1a1a1a',
+                    flexShrink: 0 // Prevent title from shrinking
+                  }}
+                >
+                  {currentActivity.title}
+                </Typography>
+                <Typography 
+                  variant="subtitle2" 
+                  sx={{ 
+                    color: '#666',
+                    mb: 1,
+                    fontSize: '0.85rem',
+                    flexShrink: 0 // Prevent date from shrinking
+                  }}
+                >
+                  {currentActivity.date}
+                </Typography>
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: '#444',
+                    lineHeight: 1.6,
+                    fontSize: '0.9rem',
+                    overflowY: 'auto', // Add scroll for overflow
+                    flexGrow: 1, // Allow description to take remaining space
+                    pr: 1, // Add some padding for scrollbar
+                    '&::-webkit-scrollbar': {
+                      width: '4px',
+                    },
+                    '&::-webkit-scrollbar-track': {
+                      background: 'transparent',
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                      background: 'rgba(0, 0, 0, 0.1)',
+                      borderRadius: '2px',
+                    },
+                    '&::-webkit-scrollbar-thumb:hover': {
+                      background: 'rgba(0, 0, 0, 0.2)',
+                    }
+                  }}
+                >
+                  {currentActivity.description}
+                </Typography>
+              </Box>
+
+              <Stack 
+                direction="row" 
+                spacing={1.5} 
+                sx={{ 
+                  p: 1.5, 
+                  borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: 'white',
+                  borderRadius: '0 0 12px 12px'
+                }}
+              >
+                <IconButton 
+                  onClick={handlePrevious}
+                  sx={{ 
+                    padding: '6px',
+                    '&:hover': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                    }
+                  }}
+                  aria-label="previous activity"
+                >
+                  <ArrowBackIosNewIcon fontSize="small" />
+                </IconButton>
+                <Stack direction="row" spacing={0.5}>
+                  {activities.map((_, index) => (
+                    <Box
+                      key={index}
+                      onClick={() => handleIndicatorClick(index)}
+                      sx={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: '50%',
+                        bgcolor: index === currentIndex ? 'primary.main' : 'rgba(0, 0, 0, 0.1)',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                        '&:hover': {
+                          bgcolor: index === currentIndex ? 'primary.dark' : 'rgba(0, 0, 0, 0.2)',
+                          transform: 'scale(1.2)'
+                        }
+                      }}
+                    />
+                  ))}
+                </Stack>
+                <IconButton 
+                  onClick={handleNext}
+                  sx={{ 
+                    padding: '6px',
+                    '&:hover': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                    }
+                  }}
+                  aria-label="next activity"
+                >
+                  <ArrowForwardIosIcon fontSize="small" />
+                </IconButton>
+              </Stack>
+            </Paper>
           </div>
         </div>
       </div>
