@@ -6,6 +6,7 @@ import Experience from "@/src/Experience/Experience";
 import Cp from "@/src/Cp/Cp";
 import Footer from "@/src/Footer/Footer";
 import Activities from "@/src/Activities/Activities";
+import Research from "@/src/Research/Research";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
       </div>
       <div id="activities">
         <Activities/>
+      </div>
+      <div id="research">
+        <Research/>
       </div>
       <Footer />
     </div>

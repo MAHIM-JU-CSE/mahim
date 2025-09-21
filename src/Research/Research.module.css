@@ -1,0 +1,212 @@
+.outer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 40px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.inner {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.leftCol {
+  flex: 0 0 300px;
+  position: sticky;
+  top: 100px;
+}
+
+.rightCol {
+  flex: 1;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.publicationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.publicationCard {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.publicationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.publicationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.publicationCard:hover::before {
+  width: 6px;
+}
+
+.publicationHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.publicationIcon {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.publicationMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.conference {
+  font-weight: 600;
+  color: #333;
+}
+
+.type {
+  color: #888;
+  font-style: italic;
+}
+
+.publicationTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.publicationCard:hover .publicationTitle {
+  color: #667eea;
+}
+
+.publicationDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.viewPaperLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.viewPaperLink:hover {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+  transform: translateX(5px);
+}
+
+.viewPaperLink::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.viewPaperLink:hover::after {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outer {
+    padding: 60px 15px 30px;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .leftCol {
+    flex: none;
+    position: static;
+    text-align: center;
+  }
+  
+  .rightCol {
+    max-width: 100%;
+  }
+  
+  .publicationCard {
+    padding: 20px;
+  }
+  
+  .publicationTitle {
+    font-size: 1.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .publicationCard {
+    padding: 15px;
+  }
+  
+  .publicationTitle {
+    font-size: 1.1rem;
+  }
+  
+  .publicationDescription {
+    font-size: 0.95rem;
+  }
+  
+  .viewPaperLink {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
