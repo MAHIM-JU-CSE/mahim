@@ -36,55 +36,39 @@ export default function Research() {
   return (
     <div className={styles.outer}>
       <div className={styles.inner}>
-        <div className={styles.row}>
-          <div className={styles.leftCol}>
-            <h1
-              style={{
-                marginBottom: 10,
-                marginLeft: 10,
-                fontWeight: 400,
-                color: "#313131",
-              }}
-            >
-              Research & Publications
-            </h1>
-          </div>
-          <div className={styles.rightCol}>
-            <p className={styles.subtitle}>
-              Exploring the frontiers of technology through research and academic contributions
-            </p>
-            
-            <div className={styles.publicationsContainer}>
-              {publications.map((publication) => (
-                <div key={publication.id} className={styles.publicationCard}>
-                  <div className={styles.publicationHeader}>
-                    <span className={styles.publicationIcon}>{publication.icon}</span>
-                    <div className={styles.publicationMeta}>
-                      <span className={styles.conference}>{publication.conference}</span>
-                      <span className={styles.type}>• {publication.type}</span>
-                    </div>
-                  </div>
-                  
-                  <h3 className={styles.publicationTitle}>
-                    {publication.title}
-                  </h3>
-                  
-                  <p className={styles.publicationDescription}>
-                    {publication.description}
-                  </p>
-                  
-                  <a 
-                    href={publication.link} 
-                    className={styles.viewPaperLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Paper →
-                  </a>
-                </div>
-              ))}
+        <h1 className={styles.title}>
+          Research & Publications
+        </h1>
+        
+        <div className={styles.publicationsContainer}>
+          {publications.map((publication) => (
+            <div key={publication.id} className={styles.publicationCard}>
+              <div className={styles.publicationHeader}>
+                <span className={styles.publicationIcon}>{publication.icon}</span>
+                <h3 className={styles.publicationTitle}>
+                  {publication.title}
+                </h3>
+              </div>
+              
+              <div className={styles.publicationMeta}>
+                <span className={styles.conference}>{publication.conference}</span>
+                <span className={styles.type}>• {publication.type}</span>
+              </div>
+              
+              <p className={styles.publicationDescription}>
+                {publication.description}
+              </p>
+              
+              <a 
+                href={publication.link} 
+                className={styles.viewPaperLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Paper
+              </a>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
