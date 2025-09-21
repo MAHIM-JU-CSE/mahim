@@ -4,7 +4,6 @@ import About from "@/src/About/About";
 import { Toolbar } from "@mui/material";
 import Experience from "@/src/Experience/Experience";
 import Cp from "@/src/Cp/Cp";
-import Contact from "@/src/Contact/Contact";
 import Footer from "@/src/Footer/Footer";
 import Activities from "@/src/Activities/Activities";
 
@@ -24,9 +23,6 @@ export default function Home() {
       </div>
       <div id="activities">
         <Activities/>
-      </div>
-      <div id="contact">
-        <Contact/>
       </div>
       <Footer />
     </div>

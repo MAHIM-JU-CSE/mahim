@@ -23,8 +23,7 @@ const navItems = [
   { name: "About", id: "about" },
   { name: "Experience", id: "experience" },
   { name: "CP Achievements", id: "cp" },
-  { name: "Activities", id: "activities" },
-  { name: "Contact", id: "contact" }
+  { name: "Activities", id: "activities" }
 ];
 
 export default function Appbar() {
