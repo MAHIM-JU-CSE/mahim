@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 1200px;
+    width: 70%;
+    max-width: 1000px;
 }
 
 .logo {
@@ -25,7 +25,7 @@
 }
 
 .logo:hover {
-    color: #2962ff;
+    color: #4d94c4;
 }
 
 .list {
@@ -47,8 +47,8 @@
 
 .listItem:hover {
     transition: all 0.3s ease;
-    color: #2962ff !important;
-    background-color: rgba(41, 98, 255, 0.05);
+    color: #4d94c4 !important;
+    background-color: rgba(77, 148, 196, 0.05);
 }
 
 @media (max-width: 600px) {

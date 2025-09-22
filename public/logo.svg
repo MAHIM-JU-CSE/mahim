@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" fill="#000000"/>
-  <path d="M4 24L8 8L12 16L16 8L20 16L24 8L28 24" 
-        stroke="#FFFFFF" 
-        stroke-width="2" 
-        fill="none" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"/>
-</svg> 
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5da5d5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4d94c4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2e48a3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1" />
+    </linearGradient>
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Deep shadow background -->
+  <rect x="7" y="7" width="32" height="32" rx="8" ry="8" fill="url(#shadowGradient)"/>
+  
+  <!-- Main 3D logo background -->
+  <rect x="4" y="4" width="32" height="32" rx="8" ry="8" fill="url(#bgGradient)" filter="url(#shadow)"/>
+  
+  <!-- Top highlight for 3D effect -->
+  <rect x="4" y="4" width="32" height="12" rx="8" ry="8" fill="url(#highlightGradient)"/>
+  
+  <!-- Inner border highlight -->
+  <rect x="6" y="6" width="28" height="28" rx="6" ry="6" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Clean letter M with inner shadow -->
+  <text x="20" y="26" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff" filter="url(#innerShadow)">M</text>
+</svg>

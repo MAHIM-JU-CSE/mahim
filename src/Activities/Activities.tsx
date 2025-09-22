@@ -29,7 +29,7 @@ const activities: Activity[] = [
     title: "Patent Experience Sharing Session at SRBD",
     date: "April 15, 2025",
     description: "Conducted a session on patent strategy in front of all engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
-    images: ["/IMG_1493.jpg"], // Multiple images for the activity
+    images: ["./IMG_1493.jpg"], // Multiple images for the activity
   },
   {
     id: 2,
@@ -37,13 +37,13 @@ const activities: Activity[] = [
     date: "March 2025",
     description: "Visited Oxford Semantic Technologies, UK for project planning and technical discussions. Met with the team to align on project goals and timelines.",
     images: [
-      "/20A92FD5-7473-4FD2-A8CE-004FE067586C_1_105_c.jpeg",
-      "/1A6CE931-16B7-41D3-A3C1-AFADEDF8AFB2_1_105_c.jpeg",
-      "/B4D924D6-EEB0-45F6-AF6B-19A734447A16_1_105_c.jpeg",
-      "/EFC7FFC2-070E-4216-A20F-2B06964BD2CB_1_105_c.jpeg",
-      "/504BCFC9-DD02-4356-91F3-EF559681764F_1_105_c.jpeg",
-      "/9EB286FC-0E0A-40A3-8B00-F81F8796ABED_1_105_c.jpeg",
-      "/7ACE9258-40E5-4028-98B1-1BC26B249DC5_1_105_c.jpeg"
+      "./20A92FD5-7473-4FD2-A8CE-004FE067586C_1_105_c.jpeg",
+      "./1A6CE931-16B7-41D3-A3C1-AFADEDF8AFB2_1_105_c.jpeg",
+      "./B4D924D6-EEB0-45F6-AF6B-19A734447A16_1_105_c.jpeg",
+      "./EFC7FFC2-070E-4216-A20F-2B06964BD2CB_1_105_c.jpeg",
+      "./504BCFC9-DD02-4356-91F3-EF559681764F_1_105_c.jpeg",
+      "./9EB286FC-0E0A-40A3-8B00-F81F8796ABED_1_105_c.jpeg",
+      "./7ACE9258-40E5-4028-98B1-1BC26B249DC5_1_105_c.jpeg"
     ],
   },
   {
@@ -52,8 +52,8 @@ const activities: Activity[] = [
     date: "March 2025",
     description: "Took some time to explore the vibrant city of London during my UK visit. Experienced the rich history, iconic landmarks, and diverse culture of one of the world's most dynamic cities.",
     images: [
-      "/ABD7AB55-E7C5-4D06-B121-2537BF0D4257_1_105_c.jpeg",
-      "/A91AC935-5E8B-452B-A026-B6457B0A5434_1_105_c.jpeg",
+      "./ABD7AB55-E7C5-4D06-B121-2537BF0D4257_1_105_c.jpeg",
+      "./A91AC935-5E8B-452B-A026-B6457B0A5434_1_105_c.jpeg",
       
     ],
   },
@@ -130,23 +130,13 @@ export default function Activities() {
   return (
     <div className={styles.outer}>
       <div className={styles.inner}>
-        <div className={styles.row}>
-          <div className={styles.leftCol}>
-            <h1
-              style={{
-                marginBottom: 10,
-                marginLeft: 10,
-                fontWeight: 400,
-                color: "#313131",
-              }}
-            >
-              Activities
-            </h1>
-          </div>
-          <div className={styles.rightCol}>
-            <p className={styles.subtitle}>
-              My Ongoing Journey Through Work, Life, Learning, and the Experiences That Shape Who I Am!
-            </p>
+        <h1 className={styles.title}>
+          Activities
+        </h1>
+        
+        <p className={styles.subtitle}>
+          My Ongoing Journey Through Work, Life, Learning, and the Experiences That Shape Who I Am!
+        </p>
 
             <Paper 
               elevation={2} 
@@ -363,8 +353,6 @@ export default function Activities() {
                 </IconButton>
               </Stack>
             </Paper>
-          </div>
-        </div>
       </div>
     </div>
   );

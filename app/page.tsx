@@ -7,6 +7,7 @@ import Cp from "@/src/Cp/Cp";
 import Footer from "@/src/Footer/Footer";
 import Activities from "@/src/Activities/Activities";
 import Research from "@/src/Research/Research";
+import Patent from "@/src/Patent/Patent";
 
 export default function Home() {
   return (
@@ -19,14 +20,17 @@ export default function Home() {
       <div id="experience">
         <Experience/>
       </div>
+      <div id="patent">
+        <Patent/>
+      </div>
+      <div id="research">
+        <Research/>
+      </div>
       <div id="cp">
         <Cp/>
       </div>
       <div id="activities">
         <Activities/>
-      </div>
-      <div id="research">
-        <Research/>
       </div>
       <Footer />
     </div>

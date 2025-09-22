@@ -1,56 +1,64 @@
 .outer {
-    background: #fff;
-    position: relative;
-    padding: 110px 0 110px 0;
-    z-index: 0;
-    display: flex;
+  background: #fff;
+  position: relative;
+  padding: 30px 0 30px 0;
+  z-index: 0;
+  display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .inner {
-    width: 80%;
-    max-width: 1290px;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .leftCol {
-    flex: 0 0 33.33333333%;
-    max-width: 33.33333333%;
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .rightCol {
-    flex: 0 0 66.66666667%;
-    max-width: 66.66666667%;
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .list {
-    padding-left: 20px;
-  }
-  
-  .listItem {
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 400;
-    color: #000000;
-    text-align: justify;
-  }
+.inner {
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #313131;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.cpContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.cpContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #4d94c4;
+}
+
+.list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.listItem {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #444;
+  text-align: left;
+  margin-bottom: 12px;
+}
   
 @media (max-width: 768px) {
   .outer {
-    padding: 60px 0 60px 0;
+    padding: 40px 0 40px 0;
   }
 
   .inner {
@@ -58,21 +66,13 @@
     padding: 0 15px;
   }
 
-  .row {
-    flex-direction: column;
+  .title {
+    font-size: 1.7rem;
+    text-align: center;
   }
 
-  .leftCol {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-
-  .rightCol {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0;
+  .cpContainer {
+    padding: 20px;
   }
 
   .list {
@@ -80,13 +80,13 @@
   }
 
   .listItem {
-    font-size: 15px;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .outer {
-    padding: 40px 0 40px 0;
+    padding: 25px 0 25px 0;
   }
 
   .inner {
@@ -94,11 +94,19 @@
     padding: 0 20px;
   }
 
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .cpContainer {
+    padding: 15px;
+  }
+
   .list {
     padding-left: 10px;
   }
 
   .listItem {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }

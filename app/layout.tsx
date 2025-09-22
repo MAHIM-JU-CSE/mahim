@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Mahbub Islam Mahim",
   description: "A modern web application.",
   icons: {
-    icon: '/logo.svg',
+    icon: './logo.svg',
   },
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo.svg?v=1" type="image/svg+xml" />
+        <link rel="icon" href="./logo.svg?v=1" type="image/svg+xml" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Script

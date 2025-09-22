@@ -1,7 +1,7 @@
 .outer {
   background: #fff;
   position: relative;
-  padding: 50px 0 110px 0;
+  padding: 30px 0 30px 0;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -9,8 +9,9 @@
 }
 
 .inner {
-  width: 80%;
-  max-width: 1290px;
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .row {
@@ -134,36 +135,98 @@
 
 .bigIcon {
   font-size: 2rem;
-  color: #2e48a3;
+  color: #4d94c4;
   transition: transform 0.3s ease, color 0.3s ease;
   margin: 0 8px;
+  position: relative;
 }
 
 .bigIcon:hover {
   transform: scale(1.2);
-  color: #2962ff;
+  color: #2e48a3;
+}
+
+.bigIcon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2e48a3;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(77, 148, 196, 0.3);
+}
+
+.bigIcon:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .interest {
-  flex: 0 0 41.66666667%;
-  max-width: 41.66666667%;
+  flex: 0 0 45%;
+  max-width: 45%;
 }
 
 .aboutRow {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 28px;
+  margin-top: 0px;
+  gap: 20px;
 }
 
 .education {
-  flex: 0 0 58.33333333%;
-  max-width: 58.33333333%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .heading {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.interestList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.interestItem {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 8px;
+  border-left: 3px solid #4d94c4;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interestItem:hover {
+  background: #f0f2f5;
+  transform: translateX(2px);
+}
+
+.interestItem i {
+  color: #4d94c4;
+  font-size: 1rem;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.interestItem span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+  line-height: 1.2;
 }
 
 .list {
@@ -178,29 +241,77 @@
   text-align: left;
 }
 
-.list2 {
-  padding-left: 40px;
-  list-style: none;
+.educationList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.edu {
-  padding-left: 8px;
-  font-size: 16px;
+.educationItem {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 8px;
+  border-left: 3px solid #4d94c4;
+  transition: all 0.3s ease;
 }
 
-.des {
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.6);
-  padding-left: 32px;
+.educationItem:hover {
+  background: #f0f2f5;
+  transform: translateX(2px);
 }
 
-.listItem2 {
-  margin-top: 5px;
+.educationHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.educationHeader i {
+  color: #4d94c4;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.educationInfo {
+  flex: 1;
+}
+
+.degree {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1px;
+  line-height: 1.2;
+}
+
+.university {
+  font-size: 12px;
+  color: #4d94c4;
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.year {
+  font-size: 11px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.gpa {
+  font-size: 12px;
+  color: #2ba2c6;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
   .outer {
-    padding: 30px 0 60px 0;
+    padding: 20px 0 40px 0;
   }
 
   .inner {
@@ -253,18 +364,42 @@
     max-width: 100%;
   }
 
-  .list, .list2 {
+  .list {
     padding-left: 20px;
   }
 
-  .des {
-    padding-left: 28px;
+  .interestItem {
+    padding: 6px;
+  }
+
+  .interestItem span {
+    font-size: 13px;
+  }
+
+  .educationItem {
+    padding: 12px;
+  }
+
+  .degree {
+    font-size: 15px;
+  }
+
+  .university {
+    font-size: 13px;
+  }
+
+  .year {
+    font-size: 12px;
+  }
+
+  .gpa {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .outer {
-    padding: 20px 0 40px 0;
+    padding: 15px 0 25px 0;
   }
 
   .inner {
@@ -293,12 +428,36 @@
     font-size: 1.1rem;
   }
 
-  .listItem, .edu {
+  .listItem {
     font-size: 14px;
   }
 
-  .des {
-    font-size: 13px;
+  .interestItem {
+    padding: 5px;
+  }
+
+  .interestItem span {
+    font-size: 12px;
+  }
+
+  .educationItem {
+    padding: 10px;
+  }
+
+  .degree {
+    font-size: 14px;
+  }
+
+  .university {
+    font-size: 12px;
+  }
+
+  .year {
+    font-size: 11px;
+  }
+
+  .gpa {
+    font-size: 12px;
   }
 
   .bigIcon {

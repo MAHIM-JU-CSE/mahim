@@ -6,87 +6,62 @@ export default function Experience() {
   return (
     <div className={styles.outer}>
       <div className={styles.inner}>
-        <div className={styles.row}>
-          <div className={styles.leftCol}>
-            <h1
-              style={{
-                marginBottom: 10,
-                marginLeft: 10,
-                fontWeight: 400,
-                color: "#313131",
-              }}
-            >
-              Experiences
-            </h1>
-          </div>
-          <div className={styles.rightCol}>
-            <div className={styles.designation}>Software Engineer</div>
-            <div className={styles.company}>
-              Samsung R&D Institute Bangladesh
+        <h1 className={styles.title}>
+          Experience
+        </h1>
+        
+        <div className={styles.experienceContainer}>
+          <div className={styles.experienceCard}>
+            <div className={styles.experienceHeader}>
+              <div className={styles.experienceInfo}>
+                <h3 className={styles.designation}>Sr. Software Engineer</h3>
+                <div className={styles.company}>
+                  Samsung R&D Institute Bangladesh
+                </div>
+                <div className={styles.duration}>April, 2023 - Present</div>
+              </div>
             </div>
-            <div className={styles.duration}>April, 2023 - Present</div>
-            <ul className={styles.list}>
-              <ul>
+            
+            <div className={styles.experienceContent}>
+              <h4 className={styles.subsectionTitle}>Innovation & Research</h4>
+              <ul className={styles.list}>
                 <li className={styles.listItem}>
-                  Currently working on a project to build a{" "}
-                  <b>Knowledge Graph editing tool</b> using the RDFox engine.
-                  Collaborating with the Oxford Semantic Technologies team , UK
-                  (acquired by Samsung in 2024).
+                  Achieved <b>1 A1-grade patent</b> and developed an on-device PoC to demonstrate the feasibility of this patent.
                 </li>
                 <li className={styles.listItem}>
-                  Responsible for analyzing requirements, designing features,
-                  and developing full-stack solutions using Next.js, TypeScript,
-                  React Flow, React Query, Playwright, Storybook, Jest,
-                  Material-UI (MUI), and Java .
+                  Submitted <b>2 research proposals</b> for patent development, which were selected by Samsung's Tech Management team and assigned DOIs.
                 </li>
                 <li className={styles.listItem}>
-                  Contributing to patent development in the area of AI-powered
-                  camera technology. Secured <b>1 A1-grade patent</b> in
-                  February 2025.
+                  Conceived and developed <b>two AI-driven solutions</b> for Samsung's internal AI contest, both selected for PoC exhibition.
                 </li>
                 <li className={styles.listItem}>
-                  Proposed and developed <b>2 AI-driven ideas</b> for Samsung’s
-                  internal AI contest, both selected for Proof-of-Concept (PoC)
-                  incubation.
+                  Designed and delivered <b>3 AI-enhanced features</b> to improve project functionality and user experience; all were integrated into the final product after successful PoCs.
                 </li>
                 <li className={styles.listItem}>
-                  Proposed and developed <b>3 project feature ideas</b> to
-                  enhance product functionality and user experience.
-                </li>
-                <li className={styles.listItem}>
-                  Completed a <b>6-month Generative AI training program</b>{" "}
-                  conducted by{" "}
-                  <a
-                    href="https://www.buet.ac.bd/web/#/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "#2e48a3" }}
-                  >
-                    BUET
-                  </a>{" "}
-                  and Samsung, focusing on practical LLM applications.
+                  Actively contribute to team innovation meetings by evaluating peer-submitted ideas and providing constructive technical feedback on novelty, obviousness, and feasibility.
                 </li>
               </ul>
-            </ul>
 
-            <div className={styles.designation2}>Teaching Assistant</div>
-            <div className={styles.company}>
-              Dept of Computer Science & Engineering, Jahangirnagar University
+              <h4 className={styles.subsectionTitle}>Development</h4>
+              <ul className={styles.list}>
+                <li className={styles.listItem}>
+                  Working on developing a <b>Knowledge Graph build tool</b> in collaboration with <b>Oxford Semantic Technologies, UK</b> (acquired by Samsung in 2024), focusing on ontology creation, visualization, data mapping, and semantic reasoning with <b>RDFox</b>.
+                </li>
+                <li className={styles.listItem}>
+                  Developed real-time in-memory persistent graph canvas with drag-and-drop support, allowing users to construct and edit RDF-based knowledge schema visually.
+                </li>
+                <li className={styles.listItem}>
+                  Leading the development of a module called <b>DATA MAPPING</b>, featuring a data mapping canvas that enables users to connect raw data to semantic entities, allowing large CSV or Parquet datasets to be transformed into RDF triples in about 10 minutes.
+                </li>
+                <li className={styles.listItem}>
+                  Led requirement analysis, technical design, and full-stack development using <b>Next.js, TypeScript, React Flow, React Query, TRPC, Zod, SPARQL, Zustand, Jest, Playwright, Storybook</b>.
+                </li>
+                <li className={styles.listItem}>
+                  Mentored <b>3 junior engineers</b> by conducting code reviews, enhancing code quality, and guiding technical decisions.
+                </li>
+              </ul>
+
             </div>
-            <div className={styles.duration}>Dec, 2021 - Mar, 2023</div>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                Trained junior students in C, C++, data structures, and
-                algorithms for programming contests.
-              </li>
-              <li className={styles.listItem}>
-                Served as Organizer, Problem Setter, and Judge for practice
-                contests.
-              </li>
-              <li className={styles.listItem}>
-                Coordinated academic activities and events of the department.
-              </li>
-            </ul>
           </div>
         </div>
       </div>

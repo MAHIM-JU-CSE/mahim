@@ -1,7 +1,7 @@
 .outer {
   background: #fff;
   position: relative;
-  padding: 110px 0 110px 0;
+  padding: 30px 0 30px 0;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -9,36 +9,24 @@
 }
 
 .inner {
-  width: 80%;
-  max-width: 1290px;
+  width: 70%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.leftCol {
-  flex: 0 0 33.33333333%;
-  max-width: 33.33333333%;
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.rightCol {
-  flex: 0 0 66.66666667%;
-  max-width: 66.66666667%;
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #313131;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.6;
 }
 
 .textContainer h2 {
@@ -56,7 +44,7 @@
 
 .carouselContainer {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
 }
 
@@ -252,7 +240,7 @@
 
 @media (max-width: 768px) {
   .outer {
-    padding: 60px 0 60px 0;
+    padding: 40px 0 40px 0;
   }
 
   .inner {
@@ -260,26 +248,15 @@
     padding: 0 15px;
   }
 
-  .row {
-    flex-direction: column;
-  }
-
-  .leftCol {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-
-  .rightCol {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0;
+  .title {
+    font-size: 1.7rem;
+    text-align: center;
   }
 
   .subtitle {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .imageContainer {
@@ -318,12 +295,16 @@
 
 @media (max-width: 480px) {
   .outer {
-    padding: 40px 0 40px 0;
+    padding: 25px 0 25px 0;
   }
 
   .inner {
     width: 100%;
     padding: 0 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 
   .subtitle {
