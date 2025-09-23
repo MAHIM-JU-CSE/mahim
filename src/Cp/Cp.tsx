@@ -2,7 +2,55 @@ import React from "react";
 
 import styles from "./Cp.module.css";
 
-export default function Experience() {
+export default function Cp() {
+  const achievements = [
+    {
+      platform: "CodeChef",
+      rating: "1916",
+      level: "4★",
+      handle: "mahim47",
+      highlight: "2nd in Bangladesh, 82nd globally",
+      link: "https://www.codechef.com/users/mahim47"
+    },
+    {
+      platform: "StopStalk",
+      level: "Aggregated Profile",
+      highlight: "Comprehensive competitive programming statistics across multiple platforms",
+      link: "https://www.stopstalk.com/user/profile/Mahim"
+    },
+    {
+      platform: "Codeforces", 
+      rating: "1568",
+      level: "Specialist",
+      handle: "Mahim",
+      highlight: "14th in Bangladesh, 852nd globally",
+      link: "https://codeforces.com/profile/Mahim"
+    },
+    {
+      platform: "ICPC",
+      level: "Regional",
+      highlight: "3-time participant (2021-24)",
+      teams: ["JU_NoName", "JU_3AngryMen", "JU_Metamask"]
+    },
+    {
+      platform: "NCPC 2023",
+      level: "National",
+      highlight: "146th out of 2000+ teams"
+    },
+    {
+      platform: "UPC 2021",
+      level: "International",
+      highlight: "Bronze Medal among 324 teams"
+    }
+  ];
+
+  const stats = [
+    { label: "Problems Solved", value: "1540+" },
+    { label: "Contests Participated", value: "185+" },
+    { label: "Onsite Contests", value: "10+" },
+    { label: "Organized Contests", value: "2" }
+  ];
+
   return (
     <div className={styles.outer}>
       <div className={styles.inner}>
@@ -10,78 +58,59 @@ export default function Experience() {
           Competitive Programming
         </h1>
         
-        <div className={styles.cpContainer}>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>
-              Competed in 3 ICPC Dhaka Regional prelims for 2021-22,
-              2022-23, and 2023-24 with teams JU_NoName, JU_3AngryMen, and
-              JU_Metamask.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 87th in NCPC 2023 prelims 2023 onsite contest with team
-              JU_Anirbaaan. Standings: NCPC 2023 Preli.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 146th in NCPC 2023 Final onsite contest with team
-              JU_Anirbaaan. Standings: NCPC 2023 Final.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 16th in the MBSTU Inter Department Programming Contest
-              2021 Final with team JU_darkMatter. Standings: MBSTU 2021
-              Final.
-            </li>
-            <li className={styles.listItem}>
-              Earned Bronze Medal in the University Physics Competition 2021
-              (a research competition) (Team No: 233). UPC 2021 Final.
-            </li>
-            <li className={styles.listItem}>
-              Participated in Google Kick Start 2022 Round A, B, and E with
-              global ranking 4336, 1260, and 3525 respectively.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 2nd in Bangladesh and 82nd globally out of 22,249
-              participants in CodeChef Round 62. Standings: Codechef Round
-              62.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 4th in Bangladesh and 123rd globally out of 6,753
-              participants in CodeChef Round 17. Standings: Codechef Round
-              17.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 14th in Bangladesh and 852nd globally out of 11,816
-              participants in Codeforces Round 755 (Div. 2). Codeforces
-              Round 755.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 26th in Bangladesh and 551st globally out of 11,000+
-              participants in Codeforces Round 792 (Div. 1 + Div. 2).
-              Codeforces Round 792.
-            </li>
-            <li className={styles.listItem}>
-              Highest ratings: 1568 on Codeforces (Specialist, handle:
-              Mahim) and 1916 on CodeChef (4*, handle: mahim47).
-            </li>
-            <li className={styles.listItem}>
-              Participated in over 185 online and over 10 onsite contests
-              and solved 1540+ programming problems on different online
-              judges. (StopStalk Profile).
-            </li>
-            <li className={styles.listItem}>
-              Organizer, Problem Setter, and Judge for JU CSE 29&apos;s Brain
-              Muscle Checking Contest 2022 and Binary Brains Battle December
-              2022.
-            </li>
-            <li className={styles.listItem}>
-              Ranked 3815th out of 27604 participants in Hackercup 2022
-              Qualification Round and progressed to the next round.
-              Hackercup 2022.
-            </li>
-            <li className={styles.listItem}>
-              Participated in Codegoda Programming Competition 2022 by
-              Agoda.
-            </li>
-          </ul>
+        <p className={styles.description}>
+          Former competitive programmer with strong algorithmic problem-solving skills. 
+          Participated in major programming contests including ICPC, National Programming Contest, 
+          and various online platforms during university years.
+        </p>
+
+        <div className={styles.achievementsList}>
+          {achievements.map((achievement, index) => (
+            <div key={index} className={styles.achievementItem}>
+              <div className={styles.achievementHeader}>
+                <h3 className={styles.platformName}>{achievement.platform}</h3>
+                {achievement.rating && (
+                  <div className={styles.rating}>
+                    <span className={styles.ratingValue}>{achievement.rating}</span>
+                    <span className={styles.ratingLevel}>{achievement.level}</span>
+                  </div>
+                )}
+              </div>
+              <p className={styles.highlight}>{achievement.highlight}</p>
+              {achievement.handle && (
+                <p className={styles.handle}>@{achievement.handle}</p>
+              )}
+              {achievement.link && (
+                <a 
+                  href={achievement.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.profileLink}
+                >
+                  View Profile
+                </a>
+              )}
+              {achievement.teams && (
+                <div className={styles.teams}>
+                  {achievement.teams.map((team, i) => (
+                    <span key={i} className={styles.teamTag}>{team}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.statsContainer}>
+          <h3 className={styles.statsTitle}>Programming Statistics</h3>
+          <div className={styles.statsGrid}>
+            {stats.map((stat, index) => (
+              <div key={index} className={styles.statItem}>
+                <div className={styles.statValue}>{stat.value}</div>
+                <div className={styles.statLabel}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

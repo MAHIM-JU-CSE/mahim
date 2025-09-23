@@ -6,31 +6,32 @@ export default function Research() {
   const publications = [
     {
       id: 1,
-      title: "Automatic License Plate Recognition System for Bangla License Plates using CNN",
-      conference: "IEEE TENCON 2019",
+      title: "Divide and Conquer: A Two-Stage Cascaded Framework with K-Fold Ensembling for Multi-Label Bangla Hate Speech Classification",
+      conference: "BLP Shared Task 1 @ AACL-IJCNLP 2025",
       type: "Conference Paper",
-      description: "This work presents a CNN-based system specifically designed to detect and recognize Bangla license plates under challenging real-world conditions. It enhances prior CNN-only methods by incorporating fuzzy logic, enabling adaptive performance across varying lighting, blur, orientation, and plate positioning scenarios.",
-      link: "#",
-      icon: "📝"
+      description: "Designed a label-wise cascaded pipeline where each label is first classified using a binary model and then refined with a multiclass model, with 7-fold cross-validation and intra-label ensembling. Achieved 1st place in the workshop contest and currently writing for BEST PAPER award.",
+      link: "https://github.com/AridHasan/blp25_task1?tab=readme-ov-file#subtask-1c-4",
+      icon: "🏆"
     },
     {
       id: 2,
-      title: "Machine Learning Approaches for Predictive Analytics in Healthcare",
-      conference: "ACM Computing Surveys 2023",
+      title: "Optimizing the Fine‑Tuning Process of Large Language Models",
+      conference: "Jahangirnagar University Journal of Electronics and Computer Science, Vol.16, June 2025",
       type: "Journal Article",
-      description: "A comprehensive survey of machine learning techniques applied to healthcare predictive analytics, covering recent advances in deep learning, ensemble methods, and interpretable AI for medical diagnosis and treatment planning.",
-      link: "#",
+      description: "A comprehensive comparison of a memory-efficient fine-tuning method that combines quantization and LoRA on LLaMA-2 7B using the CodeAlpaca-20k dataset, reducing GPU memory usage from 112 GB to 10.8 GB without sacrificing performance, thereby enabling low-resource LLM deployment in real-world applications such as coding assistants.",
+      link: "https://ecs.ju-journal.org/jujecs/article/view/38",
       icon: "📝"
     },
     {
       id: 3,
-      title: "Deep Learning for Natural Language Processing in Bengali",
-      conference: "ICON 2022",
-      type: "Conference Paper",
-      description: "This paper explores the application of transformer-based models for various NLP tasks in Bengali language, including sentiment analysis, text classification, and machine translation with improved accuracy over traditional methods.",
-      link: "#",
+      title: "Enhancing Wide‑Angle Image Using Narrow‑Angle View of the Same Scene",
+      conference: "arXiv preprint arXiv:2504.09455, April 2025",
+      type: "Preprint",
+      description: "Developed a GAN-based approach to enhance wide-angle images by fusing fine details from co-captured narrow-angle views, leveraging attention-based feature integration to improve visual fidelity.",
+      link: "https://arxiv.org/abs/2504.09455",
       icon: "📝"
-    }
+    },
+ 
   ];
 
   return (

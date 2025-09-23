@@ -8,7 +8,7 @@
 }
 
 .inner {
-  width: 70%;
+  width: 75%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -133,7 +133,6 @@
 }
 
 .viewPaperLink::after {
-  content: '→';
   transition: transform 0.3s ease;
 }
 

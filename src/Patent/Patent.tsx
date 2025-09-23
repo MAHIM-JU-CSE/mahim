@@ -28,7 +28,13 @@ export default function Patent() {
           {patents.map((patent) => (
             <div key={patent.id} className={styles.patentCard}>
               <div className={styles.patentHeader}>
-                <span className={styles.patentIcon}>{patent.icon}</span>
+                <div className={styles.patentSeal}>
+                  <img 
+                    src="/patent.png" 
+                    alt="Patent Seal" 
+                    className={styles.patentSealImage}
+                  />
+                </div>
                 <h3 className={styles.patentTitle}>
                   {patent.title}
                 </h3>
@@ -36,18 +42,14 @@ export default function Patent() {
               
               <div className={styles.patentMeta}>
                 <div className={styles.patentInfo}>
-                  <span className={styles.patentNumber}>{patent.patentNumber}</span>
+                  {/* <span className={styles.patentNumber}>{patent.patentNumber}</span> */}
                   <span className={`${styles.status} ${styles[patent.status]}`}>
-                    Filing Ongoing
+                    A1 Grade
                   </span>
                 </div>
                 <div className={styles.patentDates}>
-                  {patent.filingDate !== "TBD" && (
-                    <span className={styles.filingDate}>Filed: {patent.filingDate}</span>
-                  )}
-                  {patent.grantDate !== "TBD" && (
-                    <span className={styles.grantDate}>Granted: {patent.grantDate}</span>
-                  )}
+                  <span className={styles.filingDate}>Filed: {patent.filingDate}</span>
+                  <span className={styles.grantDate}>Organization: Samsung Research</span>
                 </div>
               </div>
               
@@ -56,7 +58,7 @@ export default function Patent() {
               </p>
               
               <a href={patent.link} className={styles.viewPatentLink}>
-                View Patent Details →
+                View Patent Details
               </a>
             </div>
           ))}

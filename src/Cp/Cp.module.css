@@ -9,7 +9,7 @@
   }
   
 .inner {
-  width: 70%;
+  width: 75%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -22,38 +22,262 @@
   text-align: left;
 }
 
-.cpContainer {
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.achievementsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.achievementItem {
   background: white;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievementItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #4d94c4;
+  transition: width 0.3s ease;
+}
+
+.achievementItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.achievementItem:hover::before {
+  width: 5px;
+}
+
+.achievementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.platformName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.ratingValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4d94c4;
+}
+
+.ratingLevel {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.contest {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.highlight {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+.handle {
+  font-size: 0.8rem;
+  color: #4d94c4;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  color: #4d94c4;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(77, 148, 196, 0.1);
+  border: 1px solid rgba(77, 148, 196, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profileLink:hover {
+  background: rgba(77, 148, 196, 0.15);
+  border-color: rgba(77, 148, 196, 0.3);
+  transform: translateY(-1px);
+}
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.teamTag {
+  background: rgba(77, 148, 196, 0.1);
+  color: #4d94c4;
+  padding: 4px 8px;
   border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.statsContainer {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
 
-.cpContainer::before {
+.statsContainer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
   background: #4d94c4;
 }
 
-.list {
-  padding-left: 20px;
-  margin: 0;
+.statsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  text-align: center;
 }
 
-.listItem {
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.statItem {
+  text-align: center;
+  padding: 10px;
+  background: rgba(77, 148, 196, 0.05);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  background: rgba(77, 148, 196, 0.1);
+  transform: translateY(-1px);
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4d94c4;
+  margin-bottom: 3px;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Combined card styles */
+.achievementLevel {
+  font-size: 0.9rem;
+  color: #4d94c4;
+  font-weight: 600;
+  background: rgba(77, 148, 196, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.subPlatforms {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subPlatform {
+  background: rgba(77, 148, 196, 0.05);
+  border-radius: 6px;
+  padding: 10px;
+  border-left: 3px solid #4d94c4;
+}
+
+.subPlatformHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.subPlatformName {
   font-size: 1rem;
-  line-height: 1.7;
-  font-weight: 400;
-  color: #444;
-  text-align: left;
-  margin-bottom: 12px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.subHighlight {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.singleAchievement {
+  margin-top: 8px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.profileLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
   
 @media (max-width: 768px) {
