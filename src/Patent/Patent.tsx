@@ -3,6 +3,9 @@
 import styles from './Patent.module.css';
 
 export default function Patent() {
+  // Get the base path for GitHub Pages compatibility
+  const basePath = process.env.NODE_ENV === 'production' ? '/mahim' : '';
+  
   const patents = [
     {
       id: 1,
@@ -30,7 +33,7 @@ export default function Patent() {
               <div className={styles.patentHeader}>
                 <div className={styles.patentSeal}>
                   <img 
-                    src="/patent.png" 
+                    src={`${basePath}/patent.png`} 
                     alt="Patent Seal" 
                     className={styles.patentSealImage}
                   />

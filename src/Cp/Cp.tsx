@@ -9,21 +9,13 @@ export default function Cp() {
       rating: "1916",
       level: "4★",
       handle: "mahim47",
-      highlight: "2nd in Bangladesh, 82nd globally",
       link: "https://www.codechef.com/users/mahim47"
-    },
-    {
-      platform: "StopStalk",
-      level: "Aggregated Profile",
-      highlight: "Comprehensive competitive programming statistics across multiple platforms",
-      link: "https://www.stopstalk.com/user/profile/Mahim"
     },
     {
       platform: "Codeforces", 
       rating: "1568",
       level: "Specialist",
       handle: "Mahim",
-      highlight: "14th in Bangladesh, 852nd globally",
       link: "https://codeforces.com/profile/Mahim"
     },
     {
@@ -35,7 +27,7 @@ export default function Cp() {
     {
       platform: "NCPC 2023",
       level: "National",
-      highlight: "146th out of 2000+ teams"
+      highlight: "NCPC finalist"
     },
     {
       platform: "UPC 2021",
@@ -55,7 +47,7 @@ export default function Cp() {
     <div className={styles.outer}>
       <div className={styles.inner}>
         <h1 className={styles.title}>
-          Competitive Programming
+          Programming Contests
         </h1>
         
         <p className={styles.description}>
@@ -73,6 +65,11 @@ export default function Cp() {
                   <div className={styles.rating}>
                     <span className={styles.ratingValue}>{achievement.rating}</span>
                     <span className={styles.ratingLevel}>{achievement.level}</span>
+                  </div>
+                )}
+                {!achievement.rating && achievement.level && (
+                  <div className={styles.level}>
+                    <span className={styles.levelText}>{achievement.level}</span>
                   </div>
                 )}
               </div>

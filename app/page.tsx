@@ -8,6 +8,7 @@ import Footer from "@/src/Footer/Footer";
 import Activities from "@/src/Activities/Activities";
 import Research from "@/src/Research/Research";
 import Patent from "@/src/Patent/Patent";
+import Awards from "@/src/Awards/Awards";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
       </div>
       <div id="research">
         <Research/>
+      </div>
+      <div id="awards">
+        <Awards/>
       </div>
       <div id="cp">
         <Cp/>

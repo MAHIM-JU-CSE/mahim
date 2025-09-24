@@ -9,7 +9,7 @@ export default function About() {
         <div className={styles.row}>
           <div className={styles.leftCol}>
             <div className={styles.profile}>
-              <img src="./pro2.jpg" alt="ffff" className={styles.image} />
+              <img src="./profile.jpeg" alt="ffff" className={styles.image} />
               <div>
                 <h2 className={styles.name}>Mahbub Islam Mahim</h2>
                 <h3 className={styles.title}>Software Engineer</h3>

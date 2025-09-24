@@ -22,9 +22,9 @@ import styles from "./Appbar.module.css";
 const navItems = [
   { name: "About", id: "about" },
   { name: "Experience", id: "experience" },
+  { name: "Patent", id: "patent" },
   { name: "Research", id: "research" },
-  { name: "Patents", id: "patent" },
-  { name: "CP Achievements", id: "cp" },
+  { name: "Awards", id: "awards" },
   { name: "Activities", id: "activities" }
 ];
 

@@ -9,8 +9,7 @@
   }
   
 .inner {
-  width: 75%;
-  max-width: 1000px;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -99,6 +98,22 @@
   font-size: 0.8rem;
   color: #666;
   font-weight: 500;
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.levelText {
+  font-size: 0.8rem;
+  color: #4d94c4;
+  font-weight: 600;
+  background: rgba(77, 148, 196, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .contest {

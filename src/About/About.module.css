@@ -9,8 +9,7 @@
 }
 
 .inner {
-  width: 75%;
-  max-width: 1000px;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -179,7 +178,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 0px;
-  gap: 20px;
+  gap: 25px;
 }
 
 .education {
