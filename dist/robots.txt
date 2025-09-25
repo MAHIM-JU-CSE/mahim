@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://mahbubislammahim.github.io/mahim/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

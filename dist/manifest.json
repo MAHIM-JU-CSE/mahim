@@ -1,0 +1,26 @@
+{
+  "name": "Mahbub Islam Mahim - Software Engineer",
+  "short_name": "Mahbub Islam Mahim",
+  "description": "Software Engineer at Samsung Research specializing in Knowledge Graphs, Machine Learning, and AI.",
+  "start_url": "/mahim/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2e48a3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "professional", "technology"],
+  "lang": "en",
+  "scope": "/mahim/"
+}
