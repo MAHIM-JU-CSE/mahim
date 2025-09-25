@@ -53,8 +53,8 @@
 
 /* Color variations for different awards */
 .gold {
-  border-color: #ffd700;
-  border-top-color: #ffd700;
+  border-color: #cbb11c;
+  border-top-color: #ceb31b;
   background: linear-gradient(135deg, #fff 0%, #fff8e7 100%);
 }
 

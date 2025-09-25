@@ -9,7 +9,7 @@ export default function Research() {
       title: "Divide and Conquer: A Two-Stage Cascaded Framework with K-Fold Ensembling for Multi-Label Bangla Hate Speech Classification",
       conference: "BLP Shared Task 1 @ AACL-IJCNLP 2025",
       type: "Conference Paper",
-      description: "Designed a label-wise cascaded pipeline where each label is first classified using a binary model and then refined with a multiclass model, with 7-fold cross-validation and intra-label ensembling. Achieved <strong>1st place</strong> in the workshop contest and currently writing for <strong>BEST PAPER award</strong>.",
+      description: "Designed a label-wise cascaded pipeline where each label is first classified using a binary model and then refined with a multiclass model, with 7-fold cross-validation and intra-label ensembling. Achieved <strong>1st place</strong> in the workshop contest and currently writing for <strong>BEST PAPER</strong> award.",
       link: "https://github.com/AridHasan/blp25_task1?tab=readme-ov-file#subtask-1c-4",
       icon: "🏆"
     },
@@ -40,6 +40,33 @@ export default function Research() {
         <h1 className={styles.title}>
           Research & Publications
         </h1>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Research Publications",
+              "description": "Research publications and academic papers by Mahbub Islam Mahim",
+              "itemListElement": publications.map((pub, index) => ({
+                "@type": "ScholarlyArticle",
+                "position": index + 1,
+                "name": pub.title,
+                "description": pub.description.replace(/<[^>]*>/g, ''), // Remove HTML tags
+                "url": pub.link,
+                "publisher": {
+                  "@type": "Organization",
+                  "name": pub.conference
+                },
+                "datePublished": "2025",
+                "author": {
+                  "@type": "Person",
+                  "name": "Mahbub Islam Mahim"
+                }
+              }))
+            })
+          }}
+        />
         
         <div className={styles.publicationsContainer}>
           {publications.map((publication) => (

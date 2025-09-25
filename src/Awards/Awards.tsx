@@ -10,7 +10,7 @@ export default function Awards() {
       title: "Icon Award",
       period: "2024",
       organization: "Samsung",
-      color: "orange"
+      color: "gold"
     },
       {
         id: 2,
@@ -26,7 +26,7 @@ export default function Awards() {
       title: "Professional Software Coding Certification",
       period: "Aug 2023",
       organization: "Samsung",
-      color: "purple"
+      color: "orange"
     }
   ];
 

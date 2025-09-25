@@ -9,34 +9,42 @@ import Activities from "@/src/Activities/Activities";
 import Research from "@/src/Research/Research";
 import Patent from "@/src/Patent/Patent";
 import Awards from "@/src/Awards/Awards";
+import Breadcrumb from "./breadcrumb";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Appbar/>
-      <Toolbar />
-      <div id="about">
-        <About/>
-      </div>
-      <div id="experience">
-        <Experience/>
-      </div>
-      <div id="patent">
-        <Patent/>
-      </div>
-      <div id="research">
-        <Research/>
-      </div>
-      <div id="awards">
-        <Awards/>
-      </div>
-      <div id="cp">
-        <Cp/>
-      </div>
-      <div id="activities">
-        <Activities/>
-      </div>
-      <Footer />
+      <Breadcrumb />
+      <header>
+        <Appbar/>
+        <Toolbar />
+      </header>
+      <main>
+        <section id="about" aria-label="About Mahbub Islam Mahim">
+          <About/>
+        </section>
+        <section id="experience" aria-label="Professional Experience">
+          <Experience/>
+        </section>
+        <section id="patent" aria-label="Patents and Intellectual Property">
+          <Patent/>
+        </section>
+        <section id="research" aria-label="Research and Publications">
+          <Research/>
+        </section>
+        <section id="awards" aria-label="Awards and Recognition">
+          <Awards/>
+        </section>
+        <section id="cp" aria-label="Competitive Programming">
+          <Cp/>
+        </section>
+        <section id="activities" aria-label="Professional Activities">
+          <Activities/>
+        </section>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
