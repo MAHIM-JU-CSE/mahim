@@ -9,7 +9,11 @@ export default function About() {
         <div className={styles.row}>
           <div className={styles.leftCol}>
             <div className={styles.profile}>
-              <img src="./profile.jpeg" alt="Mahbub Islam Mahim - Software Engineer at Samsung Research" className={styles.image} />
+              <img
+                src="./profile.jpeg"
+                alt="Mahbub Islam Mahim - Software Engineer at Samsung Research"
+                className={styles.image}
+              />
               <div>
                 <h2 className={styles.name}>Mahbub Islam Mahim</h2>
                 <h3 className={styles.title}>Software Engineer</h3>
@@ -29,8 +33,8 @@ export default function About() {
                     target="_blank"
                     rel="noopener"
                   >
-                    <i 
-                      className={`fas fa-envelope ${styles.bigIcon}`} 
+                    <i
+                      className={`fas fa-envelope ${styles.bigIcon}`}
                       data-tooltip="Email me"
                     />
                   </a>
@@ -40,8 +44,8 @@ export default function About() {
                     target="_blank"
                     rel="noopener"
                   >
-                    <i 
-                      className={`fab fa-github ${styles.bigIcon}`} 
+                    <i
+                      className={`fab fa-github ${styles.bigIcon}`}
                       data-tooltip="GitHub Profile"
                     />
                   </a>
@@ -51,20 +55,20 @@ export default function About() {
                     target="_blank"
                     rel="noopener"
                   >
-                    <i 
-                      className={`fab fa-linkedin ${styles.bigIcon}`} 
+                    <i
+                      className={`fab fa-linkedin ${styles.bigIcon}`}
                       data-tooltip="LinkedIn Profile"
                     />
                   </a>
 
                   <a
                     href="/summary.pdf"
-                    download="Mahbub_Islam_Resume.pdf"
+                    download="Mahbub_Islam_Mahim_Resume.pdf"
                     target="_blank"
                     rel="noopener"
                   >
-                    <i 
-                      className={`fas fa-file-alt ${styles.bigIcon}`} 
+                    <i
+                      className={`fas fa-file-alt ${styles.bigIcon}`}
                       data-tooltip="Download Resume"
                     />
                   </a>
@@ -83,37 +87,13 @@ export default function About() {
                 >
                   Samsung Research
                 </a>
-                . I completed both my BSc and MSc in Computer Science &
-                Engineering from{" "}
-                <a
-                  href="https://juniv.edu/"
-                  target="_blank"
-                  style={{ color: "#2e48a3" }}
-                >
-                  Jahangirnagar University
-                </a>
-                , where I was awarded the{" "}
-                <a
-                  href="https://grant.most.gov.bd/en/services/most/nst-fellowship"
-                  target="_blank"
-                  style={{ color: "#2e48a3" }}
-                >
-                  National Science and Technology Fellowship
-                </a>{" "}
-                by the Ministry of Science and Technology, Bangladesh.
-              </p>
-              <br />
-              <p className={styles.p}>
-                At Samsung Research, I lead the development of a{" "}
-                <b>Knowledge Graph build tool</b> using the{" "}
-                <a
+                , where I work on knowledge graphs and reasoning systems,
+                developing a Knowledge Graph build tool using the  <a
                   href="https://www.oxfordsemantic.tech/rdfox"
                   target="_blank"
                   style={{ color: "#2e48a3" }}
-                >
-                  RDFox engine
-                </a>
-                , collaborating with the{" "}
+                >RDFox engine</a> in
+                collaboration with{" "}
                 <a
                   href="https://www.oxfordsemantic.tech/"
                   target="_blank"
@@ -121,12 +101,31 @@ export default function About() {
                 >
                   Oxford Semantic Technologies
                 </a>{" "}
-                team in the UK. In February 2025, one of my works resulted in an{" "}
-                <b>A1-grade patent</b>, marking a key milestone in my career.
+                , UK.
+              </p>
+
+              <p className={styles.p}>
+              I completed my BSc and MSc in Computer Science & Engineering at{" "}
+                <a
+                  href="https://juniv.edu/"
+                  target="_blank"
+                  style={{ color: "#2e48a3" }}
+                >
+                  Jahangirnagar University
+                </a>
+                , and was awarded the{" "}
+                <a
+                  href="https://grant.most.gov.bd/en/services/most/nst-fellowship"
+                  target="_blank"
+                  style={{ color: "#2e48a3" }}
+                >
+                  National Science and Technology Fellowship
+                </a>{" "}
+                during my studies. In February 2025, one of my research projects at Samsung earned
+                an <b>A1-grade patent</b>, which I’m especially proud of.
               </p>
               <br />
               <br />
-              
             </div>
 
             <div className={styles.aboutRow}>
@@ -162,8 +161,12 @@ export default function About() {
                     <div className={styles.educationHeader}>
                       <i className="fas fa-graduation-cap" />
                       <div className={styles.educationInfo}>
-                        <div className={styles.degree}>MSc in Computer Science & Engineering</div>
-                        <div className={styles.university}>Jahangirnagar University</div>
+                        <div className={styles.degree}>
+                          MSc in Computer Science & Engineering
+                        </div>
+                        <div className={styles.university}>
+                          Jahangirnagar University
+                        </div>
                         <div className={styles.year}>2023</div>
                       </div>
                     </div>
@@ -174,8 +177,12 @@ export default function About() {
                     <div className={styles.educationHeader}>
                       <i className="fas fa-graduation-cap" />
                       <div className={styles.educationInfo}>
-                        <div className={styles.degree}>BSc in Computer Science & Engineering</div>
-                        <div className={styles.university}>Jahangirnagar University</div>
+                        <div className={styles.degree}>
+                          BSc in Computer Science & Engineering
+                        </div>
+                        <div className={styles.university}>
+                          Jahangirnagar University
+                        </div>
                         <div className={styles.year}>2021</div>
                       </div>
                     </div>

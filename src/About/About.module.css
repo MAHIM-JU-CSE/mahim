@@ -10,7 +10,7 @@
 
 .inner {
   width: 70%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -250,9 +250,10 @@
 .educationItem {
   background: #f8f9fa;
   border-radius: 6px;
-  padding: 8px;
+  padding: 10px;
   border-left: 3px solid #4d94c4;
   transition: all 0.3s ease;
+  min-height: 60px;
 }
 
 .educationItem:hover {
@@ -264,7 +265,7 @@
   display: flex;
   align-items: flex-start;
   gap: 6px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 
 .educationHeader i {
@@ -306,7 +307,7 @@
   color: #2ba2c6;
   font-weight: 600;
   text-align: right;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 @media (max-width: 768px) {

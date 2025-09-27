@@ -6,28 +6,36 @@ export default function Awards() {
   const awards = [
     {
       id: 1,
-      icon: "🏅",
-      title: "Icon Award",
-      period: "2024",
+      icon: "⭐",
+      title: "Icon Engineer",
+      period: "Jul-Aug 2025",
       organization: "Samsung",
       color: "gold"
     },
-      {
-        id: 2,
-        icon: "💡",
-        title: "Recognition in Innovation",
-        period: "2024",
-        organization: "Samsung",
-        color: "blue"
-      },
+    {
+      id: 2,
+      icon: "🏅",
+      title: "Icon Engineer",
+      period: "Nov-Dec 2024",
+      organization: "Samsung",
+      color: "orange"
+    },
     {
       id: 3,
+      icon: "💡",
+      title: "Recognition in Innovation",
+      period: "2024",
+      organization: "Samsung",
+      color: "red"
+    },
+    {
+      id: 4,
       icon: "💻",
       title: "Professional Software Coding Certification",
       period: "Aug 2023",
       organization: "Samsung",
-      color: "orange"
-    }
+      color: "teal"
+    },
   ];
 
   return (
