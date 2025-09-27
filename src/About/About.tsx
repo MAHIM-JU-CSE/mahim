@@ -88,12 +88,15 @@ export default function About() {
                   Samsung Research
                 </a>
                 , where I work on knowledge graphs and reasoning systems,
-                developing a Knowledge Graph build tool using the  <a
+                developing a Knowledge Graph build tool using the{" "}
+                <a
                   href="https://www.oxfordsemantic.tech/rdfox"
                   target="_blank"
                   style={{ color: "#2e48a3" }}
-                >RDFox engine</a> in
-                collaboration with{" "}
+                >
+                  RDFox engine
+                </a>{" "}
+                in collaboration with{" "}
                 <a
                   href="https://www.oxfordsemantic.tech/"
                   target="_blank"
@@ -103,9 +106,9 @@ export default function About() {
                 </a>{" "}
                 , UK.
               </p>
-
+              <br />
               <p className={styles.p}>
-              I completed my BSc and MSc in Computer Science & Engineering at{" "}
+                I completed my BSc and MSc in Computer Science & Engineering at{" "}
                 <a
                   href="https://juniv.edu/"
                   target="_blank"
@@ -121,8 +124,9 @@ export default function About() {
                 >
                   National Science and Technology Fellowship
                 </a>{" "}
-                during my studies. In February 2025, one of my research projects at Samsung earned
-                an <b>A1-grade patent</b>, which I’m especially proud of.
+                during my studies. In February 2025, one of my research projects
+                at Samsung earned an <b>A1-grade patent</b>, which I’m
+                especially proud of.
               </p>
               <br />
               <br />
