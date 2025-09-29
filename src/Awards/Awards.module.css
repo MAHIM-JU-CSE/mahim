@@ -18,13 +18,13 @@
   font-size: 2rem;
   font-weight: 400;
   color: #313131;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
 .awardsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 15px;
 }
 
@@ -93,16 +93,16 @@
 }
 
 .purple {
-  border-color: #6f42c1;
-  border-top-color: #6f42c1;
+  border-color: #8150c5;
+  border-top-color: #8150c5;
   background: linear-gradient(135deg, #fff 0%, #f8f4ff 100%);
 }
 
 .purple:hover {
-  border-color: #6f42c1;
-  border-top-color: #6f42c1;
+  border-color: #8150c5;
+  border-top-color: #8150c5;
   background: linear-gradient(135deg, #fff 0%, #f8f4ff 100%);
-  box-shadow: 0 8px 40px rgba(111, 66, 193, 0.4), 0 4px 20px rgba(111, 66, 193, 0.2);
+  box-shadow: 0 8px 40px rgba(129, 80, 197, 0.4), 0 4px 20px rgba(129, 80, 197, 0.2);
 }
 
 .orange {
@@ -187,7 +187,7 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .awardsContainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
   

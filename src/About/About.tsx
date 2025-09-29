@@ -40,13 +40,13 @@ export default function About() {
                   </a>
 
                   <a
-                    href="https://github.com/MAHIM-JU-CSE"
+                    href="https://github.com/mahim-samsung"
                     target="_blank"
                     rel="noopener"
                   >
                     <i
                       className={`fab fa-github ${styles.bigIcon}`}
-                      data-tooltip="GitHub Profile"
+                      data-tooltip="GitHub profile"
                     />
                   </a>
 
@@ -57,7 +57,7 @@ export default function About() {
                   >
                     <i
                       className={`fab fa-linkedin ${styles.bigIcon}`}
-                      data-tooltip="LinkedIn Profile"
+                      data-tooltip="LinkedIn profile"
                     />
                   </a>
 
@@ -69,7 +69,7 @@ export default function About() {
                   >
                     <i
                       className={`fas fa-file-alt ${styles.bigIcon}`}
-                      data-tooltip="Download Resume"
+                      data-tooltip="Resume"
                     />
                   </a>
                 </div>

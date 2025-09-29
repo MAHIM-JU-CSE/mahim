@@ -24,7 +24,7 @@ export default function Patent() {
     <div className={styles.outer}>
       <div className={styles.inner}>
         <h1 className={styles.title}>
-          Patents
+          Patent
         </h1>
         
         <div className={styles.patentsContainer}>

@@ -10,7 +10,7 @@ export default function Awards() {
       title: "Icon Engineer",
       period: "Jul-Aug 2025",
       organization: "Samsung",
-      color: "gold"
+      color: "gold",
     },
     {
       id: 2,
@@ -18,7 +18,8 @@ export default function Awards() {
       title: "Icon Engineer",
       period: "Nov-Dec 2024",
       organization: "Samsung",
-      color: "orange"
+      color: "orange",
+      certificateLink: "https://drive.google.com/file/d/1llMk7BYPFn99UENl2npVpzJQYkP_ty7j/view?usp=sharing"
     },
     {
       id: 3,
@@ -26,7 +27,8 @@ export default function Awards() {
       title: "Recognition in Innovation",
       period: "2024",
       organization: "Samsung",
-      color: "red"
+      color: "red",
+      certificateLink: "https://drive.google.com/file/d/1bqoWcE3ArrV-YnThYtcsP0KZBrQ_djWQ/view?usp=sharing"
     },
     {
       id: 4,
@@ -34,7 +36,17 @@ export default function Awards() {
       title: "Professional Software Coding Certification",
       period: "Aug 2023",
       organization: "Samsung",
-      color: "teal"
+      color: "teal",
+      certificateLink: "https://drive.google.com/file/d/1KENS-TVmoFbjA9Uu9H743KIt-DgV9Gan/view?usp=sharing"
+    },
+    {
+      id: 5,
+      icon: "🥉",
+      title: "Bronze Medal",
+      period: "2021",
+      organization: "UPC",
+      color: "purple",
+      certificateLink: "https://drive.google.com/file/d/1ur9ckfuTOwEAyg-0fRZGI7_zouBiuw_F/view?usp=sharing"
     },
   ];
 
@@ -47,7 +59,12 @@ export default function Awards() {
         
         <div className={styles.awardsContainer}>
           {awards.map((award) => (
-            <div key={award.id} className={`${styles.awardItem} ${styles[award.color]}`}>
+            <div 
+              key={award.id} 
+              className={`${styles.awardItem} ${styles[award.color]} ${award.certificateLink ? styles.clickable : ''}`}
+              onClick={() => award.certificateLink && window.open(award.certificateLink, '_blank')}
+              style={{ cursor: award.certificateLink ? 'pointer' : 'default' }}
+            >
               <span className={styles.awardIcon}>{award.icon}</span>
               <div className={styles.awardContent}>
                 <h3 className={styles.awardTitle}>{award.title}</h3>
@@ -55,6 +72,7 @@ export default function Awards() {
                   <span className={styles.period}>{award.period}</span>
                   <span className={styles.organization}>{award.organization}</span>
                 </div>
+               
               </div>
             </div>
           ))}
