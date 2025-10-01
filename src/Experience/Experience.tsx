@@ -24,7 +24,7 @@ export default function Experience() {
             
             <div className={styles.experienceContent}>
               <p className={styles.description}>
-                Working on intelligent knowledge systems that help organizations make sense of their data. 
+                Working in collaboration with Oxford Semantic Technologies on intelligent knowledge graph systems that help organizations make sense of their data. 
                 I contribute to building semantic platforms that transform scattered information into structured, 
                 queryable knowledge, enabling better decision-making and insights across enterprise environments.
                 Currently leading the development of a key module within the platform.

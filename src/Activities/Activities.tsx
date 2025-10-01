@@ -28,7 +28,7 @@ const activities: Activity[] = [
     id: 1,
     title: "Patent Experience Sharing Session at SRBD",
     date: "April 15, 2025",
-    description: "Conducted a session on patent strategy in front of all engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
+    description: "Conducted a session on patent strategy in front of engineers at SRBD, specifically sharing my A1 patent journey experience. Demonstrated the complete process from ideation to patent filing, including best practices for intellectual property protection and strategies for successful patent applications.",
     images: ["./IMG_1493.jpg"], // Multiple images for the activity
   },
   {

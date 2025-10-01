@@ -97,7 +97,7 @@ export default function Appbar() {
 
   return (
     <>
-      <AppBar component="nav" position="fixed">
+      <AppBar component="nav" position="fixed" sx={{ backgroundColor: 'transparent' }}>
         <Toolbar className={styles.appbar}>
           <div className={styles.appbarContent}>
             <IconButton
