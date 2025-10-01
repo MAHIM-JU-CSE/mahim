@@ -62,7 +62,7 @@ export default function About() {
                   </a>
 
                   <a
-                    href="/summary.pdf"
+                    href="/Mahim_Resume.pdf"
                     download="Mahbub_Islam_Mahim_Resume.pdf"
                     target="_blank"
                     rel="noopener"
