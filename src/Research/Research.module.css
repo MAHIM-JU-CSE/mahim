@@ -36,6 +36,10 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .publicationCard::before {
@@ -124,20 +128,14 @@
   border-radius: 6px;
   background: rgba(77, 148, 196, 0.1);
   border: 1px solid rgba(77, 148, 196, 0.2);
+  margin-top: 10px;
+  align-self: flex-start;
 }
 
-.viewPaperLink:hover {
+.publicationCard:hover .viewPaperLink {
   background: rgba(77, 148, 196, 0.15);
   border-color: rgba(77, 148, 196, 0.3);
   transform: translateX(5px);
-}
-
-.viewPaperLink::after {
-  transition: transform 0.3s ease;
-}
-
-.viewPaperLink:hover::after {
-  transform: translateX(3px);
 }
 
 /* Responsive Design */

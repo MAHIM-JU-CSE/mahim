@@ -60,9 +60,9 @@ export default function Patent() {
                 {patent.description}
               </p>
               
-              <a href={patent.link} className={styles.viewPatentLink}>
+              {/* <a href={patent.link} className={styles.viewPatentLink}>
                 View Patent Details
-              </a>
+              </a> */}
             </div>
           ))}
         </div>

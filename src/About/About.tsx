@@ -10,7 +10,7 @@ export default function About() {
           <div className={styles.leftCol}>
             <div className={styles.profile}>
               <img
-                src="./profile.jpeg"
+                src="./pro2.jpg"
                 alt="Mahbub Islam Mahim - Software Engineer at Samsung Research"
                 className={styles.image}
               />

@@ -9,8 +9,8 @@ export default function Research() {
       title: "Divide and Conquer: A Two-Stage Cascaded Framework with K-Fold Ensembling for Multi-Label Bangla Hate Speech Classification",
       conference: "BLP Shared Task 1 @ AACL-IJCNLP 2025",
       type: "Conference Paper",
-      description: "Designed a label-wise cascaded pipeline where each label is first classified using a binary model and then refined with a multiclass model, with 7-fold cross-validation and intra-label ensembling. Achieved <strong>1st place</strong> in the workshop contest and currently writing for <strong>BEST PAPER</strong> award.",
-      link: "https://github.com/AridHasan/blp25_task1?tab=readme-ov-file#subtask-1c-4",
+      description: "Designed a label-wise cascaded pipeline where each label is first classified using a binary model and then refined with a multiclass model, with k-fold cross-validation and intra-label ensembling. Became <strong>CHAMPION</strong> in the workshop contest and currently writing for <strong>BEST PAPER</strong> award.",
+      link: "https://multihate.github.io/#eval_leaderboard",
       icon: "🏆"
     },
     {
@@ -70,7 +70,13 @@ export default function Research() {
         
         <div className={styles.publicationsContainer}>
           {publications.map((publication) => (
-            <div key={publication.id} className={styles.publicationCard}>
+            <a 
+              key={publication.id} 
+              href={publication.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.publicationCard}
+            >
               <div className={styles.publicationHeader}>
                 <span className={styles.publicationIcon}>{publication.icon}</span>
                 <h3 className={styles.publicationTitle}>
@@ -88,15 +94,10 @@ export default function Research() {
                 dangerouslySetInnerHTML={{ __html: publication.description }}
               />
               
-              <a 
-                href={publication.link} 
-                className={styles.viewPaperLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <div className={styles.viewPaperLink}>
                 View Paper
-              </a>
-            </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>

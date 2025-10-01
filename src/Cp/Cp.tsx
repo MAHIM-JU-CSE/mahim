@@ -29,11 +29,6 @@ export default function Cp() {
       level: "National",
       highlight: "NCPC finalist"
     },
-    {
-      platform: "UPC 2021",
-      level: "International",
-      highlight: "Bronze Medal among 324 teams"
-    }
   ];
 
   const stats = [
